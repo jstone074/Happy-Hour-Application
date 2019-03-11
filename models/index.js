@@ -19,16 +19,24 @@ if (config.use_env_variable) {
   );
 }
 
-fs.readdirSync(__dirname)
-  .filter(function(file) {
-    return (
-      file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
-    );
-  })
-  .forEach(function(file) {
-    var model = sequelize.import(path.join(__dirname, file));
-    db[model.name] = model;
-  });
+// ------- I think this autocreates a models list using, but we can hard-code it too as below
+
+// fs.readdirSync(__dirname)
+//   .filter(function(file) {
+//     return (
+//       file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
+//     );
+//   })
+//   .forEach(function(file) {
+//     var model = sequelize.import(path.join(__dirname, file));
+//     db[model.name] = model;
+//   });
+
+// -------  Setting it up if we wanted to hard-code our models to export
+
+// const models = {
+//   User: sequelize.import('./user'),
+// };
 
 Object.keys(db).forEach(function(modelName) {
   if (db[modelName].associate) {
