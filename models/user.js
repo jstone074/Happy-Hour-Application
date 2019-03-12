@@ -28,8 +28,14 @@ const user = (sequelize, DataTypes) => {
         len: [7, 42]
       }
     },
-    role: {
-      type: DataTypes.STRING
+    phone: {
+      type: DataTypes.STRING,
+      unique: true,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+        len: [10, 14]
+      }
     }
   });
 
