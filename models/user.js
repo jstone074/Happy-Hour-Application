@@ -2,7 +2,7 @@ const bcrypt = require("bcrypt");
 
 const user = (sequelize, DataTypes) => {
   // User table
-  const User = sequelize.define("user", {
+  const User = sequelize.define("User", {
     username: {
       type: DataTypes.STRING,
       unique: true,
