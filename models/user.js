@@ -6,25 +6,17 @@ const user = (sequelize, DataTypes) => {
     username: {
       type: DataTypes.STRING,
       unique: true,
-      allowNull: false,
-      validate: {
-        notEmpty: true
-      }
+      allowNull: false
     },
     email: {
       type: DataTypes.STRING,
       unique: true,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-        isEmail: true
-      }
+      allowNull: false
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true,
         len: [7, 42]
       }
     },
@@ -33,9 +25,13 @@ const user = (sequelize, DataTypes) => {
       unique: true,
       allowNull: false,
       validate: {
-        notEmpty: true,
         len: [10, 14]
       }
+    },
+    isBusiness: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
     }
   });
 
@@ -75,5 +71,4 @@ const user = (sequelize, DataTypes) => {
   return User;
 };
 
-// export default user;
 module.exports = user;
