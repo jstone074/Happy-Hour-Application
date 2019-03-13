@@ -1,13 +1,19 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
+require("./passport");
 
 var db = require("./models");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
+const auth = require("./routes/authRoutes");
+const user = require("./routes/userRoutes");
+
 
 // Middleware
+app.use("/authRoutes", auth);
+app.use("/userRoutes", passport.authenticate("jwt", { session: false }), user);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));

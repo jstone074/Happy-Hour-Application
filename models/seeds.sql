@@ -1,0 +1,4 @@
+insert into businessTable (bName, bPhone, bEmail, bAddress) values ("Coco Bolos", "913-766-5000", "5621 W 135th St #2610, Overland Park, KS 66224");
+insert into userTable (username, password, email, phone) values ("cocobolos1", "abc123", "mike@cocobolos.com", "913-766-5000");
+insert into bSpecials (sunday, monday, tuesday, wednesday, thursday, friday, saturday) values ("$5 Mimosas $6 Bloody Mary Bar until 4pm", "Kids Eat Free (with entree purchase), Half-price Bottles of Wine", "$2 Tacos, $5 Sangria, $16 Sangria Pitchers, $3.50 Mexican Beers", "$5 Classic Cocktails", "Half-price Tijuana Trainwrecks, $3.50 DosXX Amber Draws");
+insert into bHours (sunday, monday, tuesday, wednesday, thursday, friday, saturday) values ("11am - 9pm", "11am - 10pm", "11am - 10pm", "11am - 10pm", "11am - 10pm", "11am - close", "11am - close");
