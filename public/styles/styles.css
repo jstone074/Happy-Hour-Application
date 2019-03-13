@@ -1,3 +1,55 @@
-.list-group-item {
-  line-height: 2.5;
+body, html {
+  height: 100%;
+}
+#home {
+   background-image: url("https://us.123rf.com/450wm/xamtiw/xamtiw1608/xamtiw160800062/61045639-dark-wood-texture-background-dark-old-wooden-panels-.jpg?ver=6");
+   height: 100%;
+}
+.jumbotron {
+   background-color: transparent;
+   color: white;
+}
+#home-jumbotron {
+   position: relative;
+   top: 50px;
+   left: 150px;
+   height: 400px;
+   width: 800px;
+}
+#title-img {
+   position: relative;
+   left: 180px;
+}
+#mugs-img {
+   border-radius: 50%;
+   border: 3px rgb(8, 8, 8, .5) ridge;
+   height: 300px;
+   position: relative;
+   left: 200px;
+   top: -25px;
+}
+#login-btn {
+   position: relative;
+   top: 85px;
+   left: 355px;
+   width: 400px;
+   border: 3px rgb(8, 8, 8, .2) ridge;
+   text-shadow: 2px 2px 4px #000000;
+   background-color: rgb(20, 20, 20);
+}
+#login-btn:hover {
+   background-color: rgb(223, 62, 62);
+   border-color: rgb(8, 8, 8, .2);
+}
+.sign-up {
+   position: relative;
+   border: 3px rgb(8,8,8, .2) ridge;
+   text-shadow: 2px 2px 4px #000000;
+   background-color: rgb(20, 20, 20);
+   top: 100px;
+   left: 475px;
+}
+.sign-up:hover {
+   background-color: rgb(223, 62, 62);
+   border-color: rgb(20, 20, 20, .2);
 }
