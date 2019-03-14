@@ -1,3 +1,89 @@
-.list-group-item {
-  line-height: 2.5;
+body, html {
+  height: 100%;
+}
+#home {
+   background-image: url("https://ichef.bbci.co.uk/images/ic/720x405/p047z06c.jpg");
+   height: 100%;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+.container {
+   margin-left: 10px;
+   margin-right: 10px;
+}
+.jumbotron {
+   background-color: transparent;
+   color: white;
+}
+#home-jumbotron {
+   position: relative;
+   height: 400px;
+   width: 800px;
+   padding-top: 10px;
+}
+#page-name {
+   position: relative;
+   left: 820px;
+   font-family: 'Playfair Display', serif;
+   font-size: 90px;
+   background: -webkit-linear-gradient( #e0dfdd, #f3b225);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   padding-left: 10px;
+   margin-bottom: 0px;
+}
+#slogan {
+   background: -webkit-linear-gradient(#f3b225, #e0dfdd);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   font-family: 'Playfair Display', serif;
+   position: relative;
+   left: 840px;
+}
+#login-div {
+   position: relative;
+   left: 945px;
+}
+#login-btn {
+   position: relative;
+   width: 120px;
+   left: 20px;
+   border: 3px rgb(8, 8, 8, .2) ridge;
+   font-family: 'Playfair Display', serif;
+   text-shadow: 2px 2px 4px #000000;
+   background-color: #d8ab4e;
+}
+#login-btn:hover {
+   background-color: rgb(155, 64, 4);
+   border-color: rgb(8, 8, 8, .2);
+}
+#already-user {
+   color: white;
+   font-size: 21px;
+}
+
+
+/* FORM_CSS */
+.form-container {
+   color: white;
+   position: relative;
+   top: 40px;
+   left: 825px;
+   margin-right: 0px;
+   font-family: 'Playfair Display', serif;
+   text-shadow: 2px 2px 4px #000000;
+}
+.form-control {
+   width: 400px;
+}
+#signup-submit-btn {
+   background-color:#d8ab4e;
+   border: 3px rgb(8, 8, 8, .2) ridge;
+   font-family: 'Playfair Display', serif;
+   text-shadow: 2px 2px 4px #000000;
+}
+#signup-submit-btn:hover {
+   background-color: rgb(155, 64, 4);
+   border-color: rgb(8, 8, 8, .2);
 }
