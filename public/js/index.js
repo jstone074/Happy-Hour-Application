@@ -42,40 +42,36 @@ const userFormSubmit = event => {
   event.preventDefault();
 
   const userInfo = {
-    name: $("#name")
+    username: $("#signup-username")
       .val()
       .trim(),
-    email: $("#email")
+    email: $("#signup-email")
       .val()
       .trim(),
-    phone: $("#phone")
+    phone: $("#signup-phone")
       .val()
       .trim(),
-    password: $("#password")
+    password: $("#inputPassword3")
       .val()
       .trim(), // This will need to swap to the hashed password
-    isBusiness: $("#business-radio").val()
+    isBusiness: $("input[name='gridRadios']:checked").val()
   };
+  console.log(userInfo);
 
-  if (
-    !(userInfo.name && userInfo.email && userInfo.phone && userInfo.password)
-  ) {
-    alert("You must enter all fields!");
-    return;
-  }
-
-  API.postMethod(userInfo, "user").then(() => {
+  API.postMethod(userInfo, "signup").then(() => {
     if (userInfo.isBusiness) {
+      console.log("On the way to business");
       window.location.href = "/business";
     } else {
+      console.log("On the way to user");
       window.location.href = "/user"; // ----- This should go to the user homepage
     }
   });
 
-  $name.val("");
-  $email.val("");
-  $phone.val("");
-  $password.val("");
+  $("#signup-username").val("");
+  $("#signup-email").val("");
+  $("#signup-phone").val("");
+  $("#inputPassword3").val("");
 };
 
 // delete business
@@ -101,7 +97,7 @@ const deleteUserClick = () => {
 };
 
 // Add event listeners to the submit and delete buttons
-$("#submit").on("click", userFormSubmit);
+$("#signup-submit-btn").on("click", userFormSubmit);
 $("#refresh-btn").on("click", refreshBars);
 $(".delete-business-btn").on("click", ".delete", deleteBusinessClick);
 $(".delete-account-btn").on("click", ".delete", deleteUserClick);
