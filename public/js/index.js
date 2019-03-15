@@ -1,99 +1,103 @@
-// Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
-
 // The API object contains methods for each kind of request we'll make
-var API = {
-  saveExample: function(example) {
+// They each have a 'route' argument to accomodate different routes with the same call
+
+const API = {
+  postMethod: function(data, route) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "api/" + route,
+      data: JSON.stringify(data)
     });
   },
-  getExamples: function() {
+  getMethod: function(route) {
     return $.ajax({
-      url: "api/examples",
+      url: "api/" + route,
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+  deleteMethod: function(route, id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/" + route + "/" + id,
       type: "DELETE"
     });
   }
 };
 
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
-
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
-
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
-    });
+// refreshBars gets new examples from the db and repopulates the list
+const refreshBars = function() {
+  API.getMethod().then(data => {
+    // Instead of all this, tie the refresh bars to a button
 
     $exampleList.empty();
     $exampleList.append($examples);
   });
 };
 
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
+// userFormSubmit is called whenever we submit a new user
+// Save the new user to the db and refresh the list
+const userFormSubmit = event => {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  const userInfo = {
+    username: $("#signup-username")
+      .val()
+      .trim(),
+    email: $("#signup-email")
+      .val()
+      .trim(),
+    phone: $("#signup-phone")
+      .val()
+      .trim(),
+    password: $("#inputPassword3")
+      .val()
+      .trim(), // This will need to swap to the hashed password
+    isBusiness: $("input[name='gridRadios']:checked").val()
   };
+  console.log(userInfo);
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
-
-  API.saveExample(example).then(function() {
-    refreshExamples();
+  API.postMethod(userInfo, "signup").then(() => {
+    if (userInfo.isBusiness) {
+      console.log("On the way to business");
+      window.location.href = "/business";
+    } else {
+      console.log("On the way to user");
+      window.location.href = "/user"; // ----- This should go to the user homepage
+    }
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $("#signup-username").val("");
+  $("#signup-email").val("");
+  $("#signup-phone").val("");
+  $("#inputPassword3").val("");
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
+// delete business
+const deleteBusinessClick = () => {
+  const idToDelete = $(this)
     .parent()
     .attr("data-id");
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+  API.deleteMethod(idToDelete).then(function() {
+    // Go to landing page
+  });
+};
+
+// delete user
+const deleteUserClick = () => {
+  const idToDelete = $(this)
+    .parent()
+    .attr("data-id");
+
+  API.deleteMethod(idToDelete).then(function() {
+    // Go to landing page
   });
 };
 
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$("#signup-submit-btn").on("click", userFormSubmit);
+$("#refresh-btn").on("click", refreshBars);
+$(".delete-business-btn").on("click", ".delete", deleteBusinessClick);
+$(".delete-account-btn").on("click", ".delete", deleteUserClick);

@@ -3,29 +3,24 @@ var express = require("express");
 var exphbs = require("express-handlebars");
 require("./passport");
 var passport = require("passport");
-const LocalStrategy = require("passport-local").Strategy;
+//const LocalStrategy = require("passport-local").Strategy;
 var session = require("express-session");
 var bodyParser = require("body-parser");
-
 
 var db = require("./models");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
-const auth = require("./routes/authRoutes");
-const user = require("./routes/userRoutes");
+// const auth = require("./routes/authRoutes");
+// const user = require("./routes/userRoutes");
 
 // Middleware
-app.use("/authRoutes", auth);
+//app.use("/authRoutes", auth);
 // For Passport
-app.use(session({
-  secret: 'keyboard cat',
-  resave: true,
-  saveUninitialized: true
-})); // session secret
+app.use(session({ secret: "test keyboard cat", resave: true, saveUninitialized: true })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
-app.use("/userRoutes", passport.authenticate("jwt", { session: false }), user);
+//app.use("/userRoutes", passport.authenticate("jwt", { session: false }), user);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
@@ -42,11 +37,11 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
-require("./routes/authRoutes")(app);
-require("./routes/userRoutes")(app);
+// require("./routes/authRoutes")(app);
+// require("./routes/userRoutes")(app);
 
 //load passport strategies
-require("./passport")(passport, models.user);
+//require("./passport")(passport, models.user);
 
 var syncOptions = { force: false };
 
