@@ -1,3 +1,8 @@
+/* 404 error */
+#error-msg {
+   color: black;
+}
+/* HOMEPAGE */
 body, html {
   height: 100%;
 }
@@ -9,8 +14,10 @@ body, html {
    background-position: center;
 }
 .container {
-   margin-left: 10px;
-   margin-right: 10px;
+   padding-right:0;
+   padding-left:0;
+   margin-right:auto;
+   margin-left:auto;
 }
 .jumbotron {
    background-color: transparent;
@@ -24,7 +31,7 @@ body, html {
 }
 #page-name {
    position: relative;
-   left: 820px;
+   left: 650px;
    font-family: 'Playfair Display', serif;
    font-size: 90px;
    background: -webkit-linear-gradient( #e0dfdd, #f3b225);
@@ -39,11 +46,11 @@ body, html {
    -webkit-text-fill-color: transparent;
    font-family: 'Playfair Display', serif;
    position: relative;
-   left: 840px;
+   left: 670px;
 }
 #login-div {
    position: relative;
-   left: 945px;
+   left: 745px;
 }
 #login-btn {
    position: relative;
@@ -69,7 +76,7 @@ body, html {
    color: white;
    position: relative;
    top: 40px;
-   left: 825px;
+   left: 460px;
    margin-right: 0px;
    font-family: 'Playfair Display', serif;
    text-shadow: 2px 2px 4px #000000;
@@ -86,4 +93,31 @@ body, html {
 #signup-submit-btn:hover {
    background-color: rgb(155, 64, 4);
    border-color: rgb(8, 8, 8, .2);
+}
+
+
+/* BUSINESS ACCOUNT PAGE */
+
+/* .delete-business-btn {
+   background-color: red;
+   border-color: red;
+}
+.delete-business-btn:hover {
+   background-color: rgb(212, 0, 0);
+   border-color: rgb(212, 0, 0);
+}
+
+#list-description {
+   margin-top: 20px;
+   padding-top: 20px;
+   text-align: center;
+} */
+#welcome {
+   text-align: center;
+}
+#business-jumbotron {
+   margin-top: 20px;
+   padding-top: 10px;
+   color: black;
+   background-color: #f3b225;
 }
