@@ -34,6 +34,8 @@ const API = {
 // refreshBars gets new examples from the db and repopulates the list
 const refreshBars = function() {
   API.getMethod().then(data => {
+    // Instead of all this, tie the refresh bars to a button
+
     var $examples = data.map(function(example) {
       var $a = $("<a>")
         .text(example.text)
@@ -66,10 +68,19 @@ const userFormSubmit = event => {
   event.preventDefault();
 
   const userInfo = {
-    name: $name.val().trim(),
-    email: $email.val().trim(),
-    phone: $phone.val().trim(),
-    password: $password.val().trim()
+    name: $("#name")
+      .val()
+      .trim(),
+    email: $("#email")
+      .val()
+      .trim(),
+    phone: $("#phone")
+      .val()
+      .trim(),
+    password: $("#password")
+      .val()
+      .trim(), // This will need to swap to the hashed password
+    isBusiness: $("#business-radio").val()
   };
 
   if (
@@ -79,8 +90,12 @@ const userFormSubmit = event => {
     return;
   }
 
-  API.postMethod(userInfo).then(() => {
-    // refreshExamples();
+  API.postMethod(userInfo, "user").then(() => {
+    if (userInfo.isBusiness) {
+      // Pop up modal/naviate to add business page
+    } else {
+      window.location.href = "/dashboard"; // ----- This should go to the user homepage
+    }
   });
 
   $name.val("");
@@ -89,18 +104,19 @@ const userFormSubmit = event => {
   $password.val("");
 };
 
-// deleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
+// deleteBtnClick is called when a user's delete button is clicked
+// Remove the example from the db and return to landing page
 const deleteBtnClick = () => {
   const idToDelete = $(this)
     .parent()
     .attr("data-id");
 
   API.deleteMethod(idToDelete).then(function() {
-    // refreshExamples();
+    // Go to landing page
   });
 };
 
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", userFormSubmit);
-$exampleList.on("click", ".delete", deleteBtnClick);
+$("#submit").on("click", userFormSubmit);
+$("#refresh-btn").on("click", refreshBars);
+$("#delete-btn").on("click", ".delete", deleteBtnClick);

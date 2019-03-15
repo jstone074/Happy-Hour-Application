@@ -1,9 +1,17 @@
 var db = require("../models");
 
 module.exports = function(app) {
+  // Add new user
+  app.post("/api/user", (req, res) => {
+    db.User.create(req.body).then(dbUser => {
+      res.json(dbUser);
+    });
+  });
+
+
   // Get all bars
-  app.get("/api/bars", function(req, res) {
-    db.User.findAll({}).then(function(dbUser) {
+  app.get("/api/bars", (req, res) => {
+    db.Bars.findAll({}).then(function(dbUser) {
       res.json(dbUser);
     });
   });
@@ -18,7 +26,7 @@ module.exports = function(app) {
 
   // Update favourites
   app.put("/api/fav", function(req, res) {
-    db.User.update(req.body, {
+    db.Bars.update(req.body, {
       where: {
         id: req.body.id
       }
