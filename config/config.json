@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "Wbears!6",
-    "database": "exampledb",
+    "password": "Circle08",
+    "database": "happy_hour_db",
     "host": "localhost",
     "dialect": "mysql"
   },
