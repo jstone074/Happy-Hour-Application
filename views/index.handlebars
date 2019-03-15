@@ -1,25 +1,82 @@
 <div id="home">
   <div class="container">
-    <div class="jumbotron jumbotron-fluid" id="home-jumbotron">
-      <div class="container">
-        <img id="title-img" src="https://fontmeme.com/permalink/190312/c9b4ab2d8908d6730f2e38d1dd5062b1.png"
-          alt="image of title name">
-        <img id="mugs-img"
-          src="https://i.etsystatic.com/13221305/d/il/cf9dce/1259963681/il_340x270.1259963681_q38e.jpg?version=0"
-          alt="beer mugs">
+    <div class="row">
+      <div class="col-12-lg">
+        <p id="page-name">HAPPY HOUR</p>
+      </div>
+    </div>
+    {{!-- login button --}}
+    <div class="row">
+      <div class="col-6-md">
+        <h2 id="slogan">Your favorite place<br> for your favorite places</h2>
+      </div>
+      <div class="col-6-md" id="login-div">
+        <h2 id="already-user">Already a user?</h2>
+        <button id="login-btn" type="button" class="btn btn-info btn-lg" data-toggle="modal"
+          data-target="#login-modal">LOGIN</button>
       </div>
     </div>
   </div>
-  <div class="container">
-    <button id="login-btn" type="button" class="btn btn-info btn-lg" data-toggle="modal"
-      data-target="#login-modal">LOGIN</button>
-    <div class="row">
-      <div class="col-sm-12">
-        <button id="user-sign-up" type="button" class="btn btn-secondary btn-md sign-up">New User Sign-Up</button>
+  {{!-- sign-up form --}}
+  <div class="container form-container">
+    <form>
+      {{!-- email entry --}}
+      <div class="form-group row">
+        <label for="signup-email" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="signup-email" placeholder="Enter Your Email">
+        </div>
       </div>
-    </div>
+      {{!-- password entry --}}
+      <div class="form-group row">
+        <label for="signup-password" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="inputPassword3" placeholder="Choose Your Password">
+        </div>
+      </div>
+      {{!-- username entry --}}
+      <div class="form-group row">
+        <label for="signup-username" class="col-sm-2 col-form-label">Username</label>
+        <div class="col-sm-10">
+          <input type="username" class="form-control" id="signup-username" placeholder="Choose Your Username">
+        </div>
+      </div>
+      {{!-- phone entry --}}
+       <div class="form-group row">
+        <label for="signup-phone" class="col-sm-2 col-form-label">Phone</label>
+        <div class="col-sm-10">
+          <input type="phone" class="form-control" id="signup-phone" placeholder="(000)-000-0000">
+        </div>
+      </div>
+      <fieldset class="form-group">
+        <div class="row">
+          <legend class="col-form-label col-sm-2 pt-0">Account Type</legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="account-user" value="option1" checked>
+              <label class="form-check-label" for="account-user">
+                User Account
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="account-business" value="option2">
+              <label class="form-check-label" for="account-business">
+                Business Account
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-primary" id="signup-submit-btn">Sign in</button>
+        </div>
+      </div>
+    </form>
+
   </div>
 </div>
+{{!-- MODAL --}}
 <div class="container">
   <div id="login-modal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -53,6 +110,7 @@
     </div>
   </div>
 </div>
+{{!-- end modal --}}
 </div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"

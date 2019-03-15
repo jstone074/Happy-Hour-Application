@@ -2,8 +2,15 @@ body, html {
   height: 100%;
 }
 #home {
-   background-image: url("https://us.123rf.com/450wm/xamtiw/xamtiw1608/xamtiw160800062/61045639-dark-wood-texture-background-dark-old-wooden-panels-.jpg?ver=6");
+   background-image: url("https://ichef.bbci.co.uk/images/ic/720x405/p047z06c.jpg");
    height: 100%;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+.container {
+   margin-left: 10px;
+   margin-right: 10px;
 }
 .jumbotron {
    background-color: transparent;
@@ -11,45 +18,72 @@ body, html {
 }
 #home-jumbotron {
    position: relative;
-   top: 50px;
-   left: 150px;
    height: 400px;
    width: 800px;
+   padding-top: 10px;
 }
-#title-img {
+#page-name {
    position: relative;
-   left: 180px;
+   left: 820px;
+   font-family: 'Playfair Display', serif;
+   font-size: 90px;
+   background: -webkit-linear-gradient( #e0dfdd, #f3b225);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   padding-left: 10px;
+   margin-bottom: 0px;
 }
-#mugs-img {
-   border-radius: 50%;
-   border: 3px rgb(8, 8, 8, .5) ridge;
-   height: 300px;
+#slogan {
+   background: -webkit-linear-gradient(#f3b225, #e0dfdd);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   font-family: 'Playfair Display', serif;
    position: relative;
-   left: 200px;
-   top: -25px;
+   left: 840px;
+}
+#login-div {
+   position: relative;
+   left: 945px;
 }
 #login-btn {
    position: relative;
-   top: 85px;
-   left: 355px;
-   width: 400px;
+   width: 120px;
+   left: 20px;
    border: 3px rgb(8, 8, 8, .2) ridge;
+   font-family: 'Playfair Display', serif;
    text-shadow: 2px 2px 4px #000000;
-   background-color: rgb(20, 20, 20);
+   background-color: #d8ab4e;
 }
 #login-btn:hover {
-   background-color: rgb(223, 62, 62);
+   background-color: rgb(155, 64, 4);
    border-color: rgb(8, 8, 8, .2);
 }
-.sign-up {
-   position: relative;
-   border: 3px rgb(8,8,8, .2) ridge;
-   text-shadow: 2px 2px 4px #000000;
-   background-color: rgb(20, 20, 20);
-   top: 100px;
-   left: 475px;
+#already-user {
+   color: white;
+   font-size: 21px;
 }
-.sign-up:hover {
-   background-color: rgb(223, 62, 62);
-   border-color: rgb(20, 20, 20, .2);
+
+
+/* FORM_CSS */
+.form-container {
+   color: white;
+   position: relative;
+   top: 40px;
+   left: 825px;
+   margin-right: 0px;
+   font-family: 'Playfair Display', serif;
+   text-shadow: 2px 2px 4px #000000;
+}
+.form-control {
+   width: 400px;
+}
+#signup-submit-btn {
+   background-color:#d8ab4e;
+   border: 3px rgb(8, 8, 8, .2) ridge;
+   font-family: 'Playfair Display', serif;
+   text-shadow: 2px 2px 4px #000000;
+}
+#signup-submit-btn:hover {
+   background-color: rgb(155, 64, 4);
+   border-color: rgb(8, 8, 8, .2);
 }
