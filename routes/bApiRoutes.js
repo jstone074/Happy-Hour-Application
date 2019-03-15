@@ -8,6 +8,12 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/specials", (req, res) => {
+    db.Specials.findAll({}).then(data => {
+        
+    })
+  });
+
   // Display business info
   app.get("/api/business/:id", (req, res) => {
     db.Business.findOne({

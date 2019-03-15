@@ -1,11 +1,6 @@
-// Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
-
 // The API object contains methods for each kind of request we'll make
 // They each have a 'route' argument to accomodate different routes with the same call
+
 const API = {
   postMethod: function(data, route) {
     return $.ajax({
@@ -35,27 +30,6 @@ const API = {
 const refreshBars = function() {
   API.getMethod().then(data => {
     // Instead of all this, tie the refresh bars to a button
-
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
-
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
-
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
-    });
 
     $exampleList.empty();
     $exampleList.append($examples);
@@ -92,9 +66,9 @@ const userFormSubmit = event => {
 
   API.postMethod(userInfo, "user").then(() => {
     if (userInfo.isBusiness) {
-      // Pop up modal/naviate to add business page
+      window.location.href = "/business";
     } else {
-      window.location.href = "/dashboard"; // ----- This should go to the user homepage
+      window.location.href = "/user"; // ----- This should go to the user homepage
     }
   });
 
@@ -104,9 +78,19 @@ const userFormSubmit = event => {
   $password.val("");
 };
 
-// deleteBtnClick is called when a user's delete button is clicked
-// Remove the example from the db and return to landing page
-const deleteBtnClick = () => {
+// delete business
+const deleteBusinessClick = () => {
+  const idToDelete = $(this)
+    .parent()
+    .attr("data-id");
+
+  API.deleteMethod(idToDelete).then(function() {
+    // Go to landing page
+  });
+};
+
+// delete user
+const deleteUserClick = () => {
   const idToDelete = $(this)
     .parent()
     .attr("data-id");
@@ -119,4 +103,5 @@ const deleteBtnClick = () => {
 // Add event listeners to the submit and delete buttons
 $("#submit").on("click", userFormSubmit);
 $("#refresh-btn").on("click", refreshBars);
-$("#delete-btn").on("click", ".delete", deleteBtnClick);
+$(".delete-business-btn").on("click", ".delete", deleteBusinessClick);
+$(".delete-account-btn").on("click", ".delete", deleteUserClick);
