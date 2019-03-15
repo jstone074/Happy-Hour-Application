@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Hour = sequelize.define("Hour", {
+  var Special = sequelize.define("Special", {
     sunday: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -51,5 +51,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  return Hour;
+  return Special;
 };
