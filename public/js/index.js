@@ -1,6 +1,8 @@
 // The API object contains methods for each kind of request we'll make
 // They each have a 'route' argument to accomodate different routes with the same call
 
+// var db = require("../../models");
+
 const API = {
   postMethod: function(data, route) {
     return $.ajax({
@@ -97,19 +99,51 @@ const deleteUserClick = () => {
 };
 
 const hrefToBusiness = () => {
-  window.location.href = "/members";
+  window.location.href = "/api/login";
 };
 
-const toDashboard = event => {
+const loginUser = (email, password) => {
+  $.post("/api/login", {
+    email: email,
+    password: password
+  })
+    .then(function(data) {
+      window.location.replace(data);
+      // If there's an error, log the error
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
+};
+
+$("#submit-login-btn").on("click", event => {
   event.preventDefault();
 
+  const loginInfo = {
+    email: $("#login-email")
+      .val()
+      .trim(),
+    password: $("#login-password")
+      .val()
+      .trim()
+  };
+
+  if (!loginInfo.email || !loginInfo.password) {
+    return;
+  }
+
+  loginUser(loginInfo.email, loginInfo.password);
+  // then we compare each in the html routes
+  // and check the isBusiness from the get
   console.log("toDashboard func triggered");
-  setTimeout(hrefToBusiness, 1000);
-};
+  // setTimeout(hrefToBusiness, 1000);
+  $("#login-email").val("");
+  $("#login-password").val("");
+});
 
 // Add event listeners to the submit and delete buttons
 $("#signup-submit-btn").on("click", userFormSubmit);
-$("#submit-login-btn").on("click", toDashboard);
+
 $("#refresh-btn").on("click", refreshBars);
 $(".delete-business-btn").on("click", ".delete", deleteBusinessClick);
 $(".delete-account-btn").on("click", ".delete", deleteUserClick);
