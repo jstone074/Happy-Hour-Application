@@ -50,6 +50,7 @@
       </div>
       <fieldset class="form-group">
         <div class="row">
+          {{!-- account type --}}
           <legend class="col-form-label col-sm-2 pt-0">Account Type</legend>
           <div class="col-sm-10">
             <div class="form-check">
@@ -69,6 +70,7 @@
       </fieldset>
       <div class="form-group row">
         <div class="col-sm-10">
+          {{!-- sign-in button --}}
           <button type="submit" class="btn btn-primary" id="signup-submit-btn">Sign in</button>
         </div>
       </div>
@@ -87,9 +89,10 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-          {{!-- insert the login form --}}
+          {{!-- login form --}}
           <form>
             <div class="form-group">
+              {{!-- email --}}
               <label for="login-email">Email</label>
               <input type="email" class="form-control" id="login-email" aria-describedby="email-help"
                 placeholder="Enter Email">
@@ -97,9 +100,11 @@
                 else.</small>
             </div>
             <div class="form-group">
+              {{!-- password --}}
               <label for="login-password">Password</label>
               <input type="password" class="form-control" id="login-password" placeholder="Enter Password">
             </div>
+            {{!-- submit --}}
             <button id="submit-login-btn" type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>

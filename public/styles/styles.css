@@ -19,10 +19,6 @@ body, html {
    margin-right:auto;
    margin-left:auto;
 }
-.jumbotron {
-   background-color: transparent;
-   color: white;
-}
 #home-jumbotron {
    position: relative;
    height: 400px;
