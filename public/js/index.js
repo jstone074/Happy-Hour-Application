@@ -28,7 +28,7 @@ const API = {
 
 // refreshBars gets new examples from the db and repopulates the list
 const refreshBars = function() {
-  API.getMethod().then(data => {
+  API.getMethod().then(() => {
     // Instead of all this, tie the refresh bars to a button
 
     $exampleList.empty();
@@ -61,7 +61,7 @@ const userFormSubmit = event => {
   API.postMethod(userInfo, "signup").then(() => {
     if (userInfo.isBusiness) {
       console.log("On the way to business");
-      window.location.href = "/business";
+      window.location.href = "/members";
     } else {
       console.log("On the way to user");
       window.location.href = "/user"; // ----- This should go to the user homepage
@@ -96,8 +96,20 @@ const deleteUserClick = () => {
   });
 };
 
+const hrefToBusiness = () => {
+  window.location.href = "/members";
+};
+
+const toDashboard = event => {
+  event.preventDefault();
+
+  console.log("toDashboard func triggered");
+  setTimeout(hrefToBusiness, 1000);
+};
+
 // Add event listeners to the submit and delete buttons
 $("#signup-submit-btn").on("click", userFormSubmit);
+$("#submit-login-btn").on("click", toDashboard);
 $("#refresh-btn").on("click", refreshBars);
 $(".delete-business-btn").on("click", ".delete", deleteBusinessClick);
 $(".delete-account-btn").on("click", ".delete", deleteUserClick);
