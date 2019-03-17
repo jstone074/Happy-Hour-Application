@@ -39,8 +39,14 @@ module.exports = function(app) {
       res.render("user");
     }
   });
-};
 
+  app.get("/business", function(req, res) {
+    res.render("business_mngr");
+  });
+  app.get("/user", function(req, res) {
+    res.render("user");
+  });
+};
 // module.exports = function(app) {
 //   // Load index page
 //   app.get("/", function(req, res) {
