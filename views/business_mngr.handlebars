@@ -1,105 +1,220 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 id="welcome">Happy Hour Business Manager</h1>
-        </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h1 id="welcome">Happy Hour Business Manager</h1>
     </div>
-    {{!-- account options --}}
-    <div class="row">
-        <div class="col-md-12">
-            <button id="add-business-btn" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal"
-                data-target="#add-business-modal">Add Business</button>
-            <button id="account-info-btn" type="button" class="btn btn-primary btn-lg btn-block">Account
-                Information</button>
-        </div>
+  </div>
+  {{!-- account options --}}
+  <div class="row">
+    <div class="col-md-12">
+      <button id="add-business-btn" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal"
+        data-target="#add-business-modal">Add Business</button>
+      <button id="account-info-btn" type="button" class="btn btn-primary btn-lg btn-block">Account
+        Information</button>
     </div>
-    {{!-- business jumbotron --}}
-    <div class="jumbotron" id="business-jumbotron">
-        <h1 class="display-4" id="b-name">Restaurant Name</h1>
-        <a class="btn btn-primary btn-lg float-right" href="#" role="button" id="edit-business-button">Edit</a>
-        <p class="lead" id="b-phone">(000)-000-0000</p>
-        <hr class="my-4">
-        <p id="b-address">Address</p>
-        {{!-- operating hours table --}}
-        <table class="table table-hover table-dark" id="hours-table">
-            <thead>
-                <tr>
-                    <th scope="col"></th>
-                    <th class="day-of-the-week" scope="col">Sunday</th>
-                    <th class="day-of-the-week" scope="col">Monday</th>
-                    <th class="day-of-the-week" scope="col">Tuesday</th>
-                    <th class="day-of-the-week" scope="col">Wednesday</th>
-                    <th class="day-of-the-week" scope="col">Thursday</th>
-                    <th class="day-of-the-week" scope="col">Friday</th>
-                    <th class="day-of-the-week" scope="col">Saturday</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">Operating Hours</th>
-                    <td class="op-hours">10:00am-10:00pm</td>
-                    <td class="op-hours">10:00am-10:00pm</td>
-                    <td class="op-hours">10:00am-10:00pm</td>
-                    <td class="op-hours">10:00am-10:00pm</td>
-                    <td class="op-hours">10:00am-10:00pm</td>
-                    <td class="op-hours">10:00am-10:00pm</td>
-                    <td class="op-hours">10:00am-10:00pm</td>
-                </tr>
-                <tr>
-                    <th scope="row">Happy Hours</th>
-                    <td class="happy-hours">4:00pm-6:00pm</td>
-                    <td class="happy-hours">4:00pm-6:00pm</td>
-                    <td class="happy-hours">4:00pm-6:00pm</td>
-                    <td class="happy-hours">4:00pm-6:00pm</td>
-                    <td class="happy-hours">4:00pm-6:00pm</td>
-                    <td class="happy-hours">4:00pm-6:00pm</td>
-                    <td class="happy-hours">4:00pm-6:00pm</td>
-                </tr>
-                <tr>
-                    <th scope="row">Specials</th>
-                    <td class="specials">Enter Special Here</td>
-                    <td class="specials">Enter Special Here</td>
-                    <td class="specials">Enter Special Here</td>
-                    <td class="specials">Enter Special Here</td>
-                    <td class="specials">Enter Special Here</td>
-                    <td class="specials">Enter Special Here</td>
-                    <td class="specials">Enter Special Here</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+  </div>
+  {{!-- business jumbotron --}}
+  <div class="jumbotron" id="business-jumbotron">
+    <h1 class="display-4" id="b-name">Restaurant Name</h1>
+    <a class="btn btn-primary btn-lg float-right" href="#" role="button" id="edit-business-button">Edit</a>
+    <p class="lead" id="b-phone">(000)-000-0000</p>
+    <hr class="my-4">
+    <p id="b-address">Address</p>
+    {{!-- operating hours table --}}
+    <table class="table table-hover table-dark" id="hours-table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th class="day-of-the-week" scope="col">Sunday</th>
+          <th class="day-of-the-week" scope="col">Monday</th>
+          <th class="day-of-the-week" scope="col">Tuesday</th>
+          <th class="day-of-the-week" scope="col">Wednesday</th>
+          <th class="day-of-the-week" scope="col">Thursday</th>
+          <th class="day-of-the-week" scope="col">Friday</th>
+          <th class="day-of-the-week" scope="col">Saturday</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Operating Hours</th>
+          <td class="op-hours">10:00am-10:00pm</td>
+          <td class="op-hours">10:00am-10:00pm</td>
+          <td class="op-hours">10:00am-10:00pm</td>
+          <td class="op-hours">10:00am-10:00pm</td>
+          <td class="op-hours">10:00am-10:00pm</td>
+          <td class="op-hours">10:00am-10:00pm</td>
+          <td class="op-hours">10:00am-10:00pm</td>
+        </tr>
+        <tr>
+          <th scope="row">Specials</th>
+          <td class="specials">Enter Special Here</td>
+          <td class="specials">Enter Special Here</td>
+          <td class="specials">Enter Special Here</td>
+          <td class="specials">Enter Special Here</td>
+          <td class="specials">Enter Special Here</td>
+          <td class="specials">Enter Special Here</td>
+          <td class="specials">Enter Special Here</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 {{!-- add business modal --}}
 <div class="container">
-  <div id="add-business-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
+
+  <div id="add-business-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">User Log-In</h4>
+          <h4>Add Business</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-          {{!-- insert the login form --}}
+          {{!-- add business form --}}
           <form>
-            <div class="form-group">
-              <label for="login-email">Email</label>
-              <input type="email" class="form-control" id="login-email" aria-describedby="email-help"
-                placeholder="Enter Email">
-              <small id="email-help" class="form-text text-muted">We will never share your email with anyone
-                else.</small>
+            <div class="form-group row">
+              <label for="new-business-name" class="col-sm-2 col-form-label">Business Name</label>
+              <div class="col-sm-10">
+                <input type="name" class="form-control" id="new-business-name" placeholder="Business Name">
+              </div>
             </div>
-            <div class="form-group">
-              <label for="login-password">Password</label>
-              <input type="password" class="form-control" id="login-password" placeholder="Enter Password">
+            <div class="form-group row">
+              <label for="new-business-phone" class="col-sm-2 col-form-label">Phone Number</label>
+              <div class="col-sm-10">
+                <input type="phone" class="form-control" id="new-business-phone" placeholder="(000)-000-0000">
+              </div>
             </div>
-            <button id="submit-login-btn" type="submit" class="btn btn-primary">Submit</button>
+            <div class="form-group row">
+              <label for="new-business-address" class="col-sm-2 col-form-label">Address</label>
+              <div class="col-sm-10">
+                <input type="address" class="form-control" id="new-business-address" placeholder="Enter Address">
+              </div>
+            </div>
+            {{!-- start opening hours input fields --}}
+            <fieldset id="new-business-op-hours" class="form-group">
+              <h5>Operating Hours</h5>
+              <div class="row">
+                <div class="col-sm-4">
+                  <h6>Sun</h6>
+                  <p>Open:</p><input id="sun-open" type="time" name="appt" min="9:00" max="18:00" required>
+                  <p>Close:</p><input id="sun-close" type="time" name="appt" min="9:00" max="18:00" required>
+                </div>
+                <div class="col-sm-4">
+                  <h6>Mon</h6>
+                  <p>Open:</p><input id="mon-open" type="time" name="appt" min="9:00" max="18:00" required>
+                  <p>Close:</p><input id="mon-close" type="time" name="appt" min="9:00" max="18:00" required>
+                </div>
+                <div class="col-sm-4">
+                  <h6>Tue</h6>
+                  <p>Open:</p><input id="tue-open" type="time" name="appt" min="9:00" max="18:00" required>
+                  <p>Close:</p><input id="tue-close" type="time" name="appt" min="9:00" max="18:00" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-4">
+                  <h6>Wed</h6>
+                  <p>Open:</p><input id="wed-open" type="time" name="appt" min="9:00" max="18:00" required>
+                  <p>Close:</p><input id="wed-close" type="time" name="appt" min="9:00" max="18:00" required>
+                </div>
+                <div class="col-sm-4">
+                  <h6>Thu</h6>
+                  <p>Open:</p><input id="thu-open" type="time" name="appt" min="9:00" max="18:00" required>
+                  <p>Close:</p><input id="thu-close" type="time" name="appt" min="9:00" max="18:00" required>
+                </div>
+                <div class="col-sm-4">
+                  <h6>Fri</h6>
+                  <p>Open:</p><input id="fri-open" type="time" name="appt" min="9:00" max="18:00" required>
+                  <p>Close:</p><input id="fri-close" type="time" name="appt" min="9:00" max="18:00" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 center">
+                  <h6>Sat</h6>
+                  <p>Open:</p><input id="sat-open" type="time" name="appt" min="9:00" max="18:00" required>
+                  <p>Close:</p><input id="sat-close" type="time" name="appt" min="9:00" max="18:00" required>
+                </div>
+              </div>
+            </fieldset>
+            {{!-- end opening hours input fields --}}
+
+            {{!-- START SPECIALS --}}
+            <h5>Daily Specials</h5>
+            {{!-- sunday --}}
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Sunday Specials</span>
+              </div>
+              <input id="newbiz-sun-spec" type="text" class="form-control" aria-label="daily special"
+                aria-describedby="inputGroup-sizing-sm">
+            </div>
+            {{!-- monday --}}
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Monday Specials</span>
+              </div>
+              <input id="newbiz-mon-spec" type="text" class="form-control" aria-label="daily special"
+                aria-describedby="inputGroup-sizing-sm">
+            </div>
+            {{!-- tuesday --}}
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Tuesday Specials</span>
+              </div>
+              <input id="newbiz-tue-spec" type="text" class="form-control" aria-label="daily special"
+                aria-describedby="inputGroup-sizing-sm">
+            </div>
+            {{!-- wednesday --}}
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Wednesday Specials</span>
+              </div>
+              <input id="newbiz-wed-spec" type="text" class="form-control" aria-label="daily special"
+                aria-describedby="inputGroup-sizing-sm">
+            </div>
+            {{!-- thursday --}}
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Thursday Specials</span>
+              </div>
+              <input id="newbiz-thu-spec" type="text" class="form-control" aria-label="daily special"
+                aria-describedby="inputGroup-sizing-sm">
+            </div>
+            {{!-- friday --}}
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Friday Specials</span>
+              </div>
+              <input id="newbiz-fri-spec" type="text" class="form-control" aria-label="daily special"
+                aria-describedby="inputGroup-sizing-sm">
+            </div>
+            {{!-- saturday --}}
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Saturday Specials</span>
+              </div>
+              <input id="newbiz-sat-spec" type="text" class="form-control" aria-label="daily special"
+                aria-describedby="inputGroup-sizing-sm">
+            </div>
+            {{!-- add business button --}}
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Add</button>
+              </div>
+            </div>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" id="close-modal-btn">Close</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" id="close-modal-btn">Close</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+{{!-- end modal --}}
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
