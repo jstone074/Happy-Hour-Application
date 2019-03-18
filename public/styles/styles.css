@@ -93,21 +93,6 @@ body, html {
 
 
 /* BUSINESS ACCOUNT PAGE */
-
-/* .delete-business-btn {
-   background-color: red;
-   border-color: red;
-}
-.delete-business-btn:hover {
-   background-color: rgb(212, 0, 0);
-   border-color: rgb(212, 0, 0);
-}
-
-#list-description {
-   margin-top: 20px;
-   padding-top: 20px;
-   text-align: center;
-} */
 #welcome {
    text-align: center;
 }
@@ -116,4 +101,10 @@ body, html {
    padding-top: 10px;
    color: black;
    background-color: #f3b225;
+}
+
+/* Global modal styling */
+
+#close-modal-btn {
+   background-color: rgb(236, 202, 49);
 }

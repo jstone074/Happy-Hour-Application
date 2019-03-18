@@ -93,53 +93,64 @@
             </div>
             {{!-- start opening hours input fields --}}
             <fieldset id="new-business-op-hours" class="form-group">
+              <hr>
               <h5>Operating Hours</h5>
+              <hr>
               <div class="row">
+                {{!-- Sunday hours --}}
                 <div class="col-sm-4">
                   <h6>Sun</h6>
-                  <p>Open:</p><input id="sun-open" type="time" name="appt" min="9:00" max="18:00" required>
-                  <p>Close:</p><input id="sun-close" type="time" name="appt" min="9:00" max="18:00" required>
+                  <p>Open:</p><input id="sun-open" type="time" name="hours" min="0:00" max="23:59" required>
+                  <p>Close:</p><input id="sun-close" type="time" name="hours" min="0:00" max="23:59" required>
                 </div>
                 <div class="col-sm-4">
+                  {{!-- Monday hours --}}
                   <h6>Mon</h6>
-                  <p>Open:</p><input id="mon-open" type="time" name="appt" min="9:00" max="18:00" required>
-                  <p>Close:</p><input id="mon-close" type="time" name="appt" min="9:00" max="18:00" required>
+                  <p>Open:</p><input id="mon-open" type="time" name="hours" min="0:00" max="23:59" required>
+                  <p>Close:</p><input id="mon-close" type="time" name="hours" min="0:00" max="23:59" required>
                 </div>
                 <div class="col-sm-4">
+                  {{!-- Tuesday hours --}}
                   <h6>Tue</h6>
-                  <p>Open:</p><input id="tue-open" type="time" name="appt" min="9:00" max="18:00" required>
-                  <p>Close:</p><input id="tue-close" type="time" name="appt" min="9:00" max="18:00" required>
+                  <p>Open:</p><input id="tue-open" type="time" name="hours" min="0:00" max="23:59" required>
+                  <p>Close:</p><input id="tue-close" type="time" name="hours" min="0:00" max="23:59" required>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-4">
+                  {{!-- Wendesday hours --}}
                   <h6>Wed</h6>
-                  <p>Open:</p><input id="wed-open" type="time" name="appt" min="9:00" max="18:00" required>
-                  <p>Close:</p><input id="wed-close" type="time" name="appt" min="9:00" max="18:00" required>
+                  <p>Open:</p><input id="wed-open" type="time" name="hours" min="0:00" max="23:59" required>
+                  <p>Close:</p><input id="wed-close" type="time" name="hours" min="0:00" max="23:59" required>
                 </div>
                 <div class="col-sm-4">
+                  {{!-- Thursday hours --}}
                   <h6>Thu</h6>
-                  <p>Open:</p><input id="thu-open" type="time" name="appt" min="9:00" max="18:00" required>
-                  <p>Close:</p><input id="thu-close" type="time" name="appt" min="9:00" max="18:00" required>
+                  <p>Open:</p><input id="thu-open" type="time" name="hours" min="0:00" max="23:59" required>
+                  <p>Close:</p><input id="thu-close" type="time" name="hours" min="0:00" max="23:59" required>
                 </div>
                 <div class="col-sm-4">
+                  {{!-- Friday hours --}}
                   <h6>Fri</h6>
-                  <p>Open:</p><input id="fri-open" type="time" name="appt" min="9:00" max="18:00" required>
-                  <p>Close:</p><input id="fri-close" type="time" name="appt" min="9:00" max="18:00" required>
+                  <p>Open:</p><input id="fri-open" type="time" name="hours" min="0:00" max="23:59" required>
+                  <p>Close:</p><input id="fri-close" type="time" name="hours" min="0:00" max="23:59" required>
                 </div>
               </div>
               <div class="row">
+                {{!-- Saturday hours --}}
                 <div class="col-sm-12 center">
                   <h6>Sat</h6>
-                  <p>Open:</p><input id="sat-open" type="time" name="appt" min="9:00" max="18:00" required>
-                  <p>Close:</p><input id="sat-close" type="time" name="appt" min="9:00" max="18:00" required>
+                  <p>Open:</p><input id="sat-open" type="time" name="hours" min="0:00" max="23:59" required>
+                  <p>Close:</p><input id="sat-close" type="time" name="hours" min="0:00" max="23:59" required>
                 </div>
               </div>
             </fieldset>
             {{!-- end opening hours input fields --}}
 
             {{!-- START SPECIALS --}}
+            <hr>
             <h5>Daily Specials</h5>
+            <hr>
             {{!-- sunday --}}
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
