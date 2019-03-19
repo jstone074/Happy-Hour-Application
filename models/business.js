@@ -1,20 +1,119 @@
+/* eslint-disable camelcase */
 module.exports = function(sequelize, DataTypes) {
   var Business = sequelize.define("Business", {
-    business_name: {
+    businessName: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    business_phone: {
+    businessPhone: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    business_address: {
+    businessAddress: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    openHourSunday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    openHourMonday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    openHourTuesday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    openHourWednesday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    openHourThursday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    openHourFriday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    openHourSaturday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    specialSunday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    specialMonday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    specialTuesday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    specialWednesday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    specialThursday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    specialFriday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    specialSaturday: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -29,18 +128,17 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: true
       }
     });
+    // Business.belongsTo(models.Hour, {
+    //   foreignKey: {
+    //     allowNull: true
+    //   }
+    // });
 
-    Business.belongsTo(models.Hour, {
-      foreignKey: {
-        allowNull: true
-      }
-    });
-
-    Business.belongsTo(models.Special, {
-      foreignKey: {
-        allowNull: true
-      }
-    });
+    // Business.belongsTo(models.Special, {
+    //   foreignKey: {
+    //     allowNull: true
+    //   }
+    // });
   };
 
   return Business;
