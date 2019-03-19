@@ -1,7 +1,7 @@
 // require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
-require("./passport");
+const passportJS = require("./passport");
 var passport = require("passport");
 //const LocalStrategy = require("passport-local").Strategy;
 var session = require("express-session");
@@ -11,11 +11,11 @@ var db = require("./models");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
-// const auth = require("./routes/authRoutes");
+const auth = require("./routes/authRoutes");
 // const user = require("./routes/userRoutes");
 
 // Middleware
-//app.use("/authRoutes", auth);
+
 // For Passport
 app.use(
   session({
@@ -31,6 +31,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
+
 // Handlebars
 app.engine(
   "handlebars",
@@ -44,9 +45,9 @@ app.set("view engine", "handlebars");
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 require("./routes/businessRoutes")(app);
-// require("./routes/authRoutes")(app);
-// require("./routes/userRoutes")(app);
-
+//require("./routes/authRoutes")(app);
+require("./routes/userRoutes")(app);
+app.use("/authRoutes", auth);
 //load passport strategies
 //require("./passport")(passport, models.user);
 
