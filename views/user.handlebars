@@ -17,21 +17,7 @@
             </tr>
         </thead>
         <tbody id="column-content">
-            <tr>
-                <td id="bar-1-name">Name</td>
-                <td id="bar-1-hours">Hours</td>
-                <td id="bar-1-specs">Special(s)</td>
-            </tr>
-            <tr>
-                <td id="bar-2-name">Name</td>
-                <td id="bar-2-hours">Hours</td>
-                <td id="bar-2-specs">Special(s)</td>
-            </tr>
-            <tr>
-                <td id="bar-3-name">Name</td>
-                <td id="bar-3-hours">Hours</td>
-                <td id="bar-3-specs">Special(s)</td>
-            </tr>
+            {{!-- The bars info will populate here --}}
         </tbody>
     </table>
     <!-- Footer -->
@@ -133,8 +119,8 @@
 
                 let newRow = $("<tr>");
                 newRow.data("id", data.businessName);
-                newRow.append("<td>" + data.name + "</td>");
-                newRow.append(newHours;
+                newRow.append("<td>" + data[i].businessName + "</td>");
+                newRow.append(newHours);
                 newRow.append(newSpecials);
                 $("tbody").append(newRow);
             };
