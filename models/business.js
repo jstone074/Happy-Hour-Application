@@ -26,19 +26,19 @@ module.exports = function(sequelize, DataTypes) {
   Business.associate = function(models) {
     Business.belongsTo(models.User, {
       foreignKey: {
-        allowNull: false
+        allowNull: true
       }
     });
 
     Business.belongsTo(models.Hour, {
       foreignKey: {
-        allowNull: false
+        allowNull: true
       }
     });
 
     Business.belongsTo(models.Special, {
       foreignKey: {
-        allowNull: false
+        allowNull: true
       }
     });
   };

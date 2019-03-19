@@ -58,6 +58,7 @@ const userFormSubmit = event => {
       .trim(), // This will need to swap to the hashed password
     isBusiness: $("input[name='gridRadios']:checked").val()
   };
+  console.log("This is the user info");
   console.log(userInfo);
 
   API.postMethod(userInfo, "signup").then(() => {
@@ -74,6 +75,80 @@ const userFormSubmit = event => {
   $("#signup-email").val("");
   $("#signup-phone").val("");
   $("#inputPassword3").val("");
+};
+
+const createNewBusiness = event => {
+  event.preventDefault();
+
+  const businessInfo = {
+    businessName: $("#new-business-name")
+      .val()
+      .trim(),
+    businessPhone: $("#new-business-phone")
+      .val()
+      .trim(),
+    businessAddress: $("#new-business-address")
+      .val()
+      .trim()
+  };
+
+  const businessHours = {
+    businessSundayHours: $("#sun-open")
+      .val()
+      .trim(),
+    businessMondayHours: $("#mon-open")
+      .val()
+      .trim(),
+    businessTuesdayHours: $("#tue-open")
+      .val()
+      .trim(),
+    businessWednesdayHours: $("#wed-open")
+      .val()
+      .trim(),
+    businessThrusdayHours: $("#thu-open")
+      .val()
+      .trim(),
+    businessFridayHours: $("#fri-open")
+      .val()
+      .trim(),
+    businessSaturdayHours: $("#sat-open")
+      .val()
+      .trim()
+  };
+
+  const businessSpecails = {
+    businessSundayHours: $("#newbiz-sun-spec")
+      .val()
+      .trim(),
+    businessMondayHours: $("#newbiz-mon-spec")
+      .val()
+      .trim(),
+    businessTuesdayHours: $("#newbiz-tue-spec")
+      .val()
+      .trim(),
+    businessWednesdayHours: $("#newbiz-wed-spec")
+      .val()
+      .trim(),
+    businessThrusdayHours: $("#newbiz-thu-spec")
+      .val()
+      .trim(),
+    businessFridayHours: $("#newbiz-fri-spec")
+      .val()
+      .trim(),
+    businessSaturdayHours: $("#newbiz-sat-spec")
+      .val()
+      .trim()
+  };
+  console.log(businessInfo, businessHours, businessSpecails);
+
+  API.postMethod(businessHours, "business");
+  API.postMethod(businessSpecails, "business");
+  API.postMethod(businessInfo, "business");
+
+  // $("#signup-username").val("");
+  // $("#signup-email").val("");
+  // $("#signup-phone").val("");
+  // $("#inputPassword3").val("");
 };
 
 // delete business
@@ -143,7 +218,7 @@ $("#submit-login-btn").on("click", event => {
 
 // Add event listeners to the submit and delete buttons
 $("#signup-submit-btn").on("click", userFormSubmit);
-
+$("#confirm-add").on("click", createNewBusiness);
 $("#refresh-btn").on("click", refreshBars);
 $(".delete-business-btn").on("click", ".delete", deleteBusinessClick);
 $(".delete-account-btn").on("click", ".delete", deleteUserClick);
