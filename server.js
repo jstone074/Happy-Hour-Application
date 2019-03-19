@@ -45,7 +45,7 @@ require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 require("./routes/businessRoutes")(app);
 // require("./routes/authRoutes")(app);
-// require("./routes/userRoutes")(app);
+require("./routes/userRoutes")(app);
 
 //load passport strategies
 //require("./passport")(passport, models.user);

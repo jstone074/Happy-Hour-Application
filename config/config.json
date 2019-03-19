@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Circle08",
+    "password": "MySequel27",
     "database": "happy_hour_db",
     "host": "localhost",
     "dialect": "mysql"

@@ -28,16 +28,6 @@ const API = {
   }
 };
 
-// refreshBars gets new examples from the db and repopulates the list
-const refreshBars = function() {
-  API.getMethod().then(() => {
-    // Instead of all this, tie the refresh bars to a button
-
-    $exampleList.empty();
-    $exampleList.append($examples);
-  });
-};
-
 // userFormSubmit is called whenever we submit a new user
 // Save the new user to the db and refresh the list
 const userFormSubmit = event => {
@@ -173,10 +163,6 @@ const deleteUserClick = () => {
   });
 };
 
-const hrefToBusiness = () => {
-  window.location.href = "/api/login";
-};
-
 const loginUser = (email, password) => {
   $.post("/api/login", {
     email: email,
@@ -219,6 +205,6 @@ $("#submit-login-btn").on("click", event => {
 // Add event listeners to the submit and delete buttons
 $("#signup-submit-btn").on("click", userFormSubmit);
 $("#confirm-add").on("click", createNewBusiness);
-$("#refresh-btn").on("click", refreshBars);
-$(".delete-business-btn").on("click", ".delete", deleteBusinessClick);
-$(".delete-account-btn").on("click", ".delete", deleteUserClick);
+// $("#refresh-btn").on("click", refreshBars);
+// $(".delete-business-btn").on("click", ".delete", deleteBusinessClick);
+// $(".delete-account-btn").on("click", ".delete", deleteUserClick);
