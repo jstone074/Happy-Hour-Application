@@ -1,14 +1,10 @@
-const express = require("express");
-const router = express.Router();
+const db = require("../models");
+// const express = require("express");
+// const router = express.Router();
 
-/* GET users listing. */
-router.get("/", function(req, res, next) {
-  res.send("respond with a resource");
-});
-
-/* GET user profile. */
-router.get("/profile", function(req, res, next) {
-  res.send(req.user);
-});
-
-module.exports = router;
+module.exports = function(app) {
+  //display the username of the user currently logged in
+  app.get("/api/me", (req, res) => {
+    res.json(req.user.username);
+  });
+};
