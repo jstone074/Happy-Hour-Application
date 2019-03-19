@@ -5,20 +5,9 @@ var db = require("../models");
 module.exports = function(app) {
   // GET Bars
   app.get("/api/bars", function(req, res) {
-    db.User.findAll({
-      where: {
-        isBusiness: true
-      }
-    }).then(data => {
-      // console.log(data[0].dataValues);
-      // res.json(data);
-      for (let i = 0; i < data[0].dataValues.length; i++) {
-        db.Business.findOne({
-          where: {
-            id: 
-          }
-        })
-      }
+    db.Business.findAll({}).then(data => {
+      console.log(data[0].dataValues);
+      res.json(data);
     });
   });
 
