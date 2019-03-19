@@ -46,8 +46,13 @@ module.exports = function(app) {
 
   });
 
-
-
+  app.get("/business", function(req, res) {
+    res.render("business_mngr");
+  });
+  app.get("/user", function(req, res) {
+    res.render("user");
+  });
+};
 // module.exports = function(app) {
 //   // Load index page
 //   app.get("/", function(req, res) {
