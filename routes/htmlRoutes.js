@@ -42,7 +42,6 @@ module.exports = function(app) {
     } else {
       res.render("user");
     }
-
   });
 
   app.get("/business", function(req, res) {
