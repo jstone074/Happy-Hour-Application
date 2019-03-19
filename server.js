@@ -17,7 +17,13 @@ var PORT = process.env.PORT || 3000;
 // Middleware
 //app.use("/authRoutes", auth);
 // For Passport
-app.use(session({ secret: "test keyboard cat", resave: true, saveUninitialized: true })); // session secret
+app.use(
+  session({
+    secret: "test keyboard cat",
+    resave: true,
+    saveUninitialized: true
+  })
+); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 //app.use("/userRoutes", passport.authenticate("jwt", { session: false }), user);
