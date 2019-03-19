@@ -29,7 +29,21 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
+    closeHourSunday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
     openHourMonday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    closeHourMonday: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -43,7 +57,21 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
+    closeHourTuesday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
     openHourWednesday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    closeHourWednesday: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -57,6 +85,13 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
+    closeHourThursday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
     openHourFriday: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -64,7 +99,21 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
+    closeHourFriday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
     openHourSaturday: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    closeHourSaturday: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {

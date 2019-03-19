@@ -80,25 +80,46 @@ const createNewBusiness = event => {
     businessAddress: $("#new-business-address")
       .val()
       .trim(),
-    businessSundayHours: $("#sun-open")
+    businessSundayHoursOpen: $("#sun-open")
       .val()
       .trim(),
-    businessMondayHours: $("#mon-open")
+    businessSundayHoursClose: $("#sun-close")
       .val()
       .trim(),
-    businessTuesdayHours: $("#tue-open")
+    businessMondayHoursOpen: $("#mon-open")
       .val()
       .trim(),
-    businessWednesdayHours: $("#wed-open")
+    businessMondayHoursClose: $("#mon-close")
       .val()
       .trim(),
-    businessThrusdayHours: $("#thu-open")
+    businessTuesdayHoursOpen: $("#tue-open")
       .val()
       .trim(),
-    businessFridayHours: $("#fri-open")
+    businessTuesdayHoursClose: $("#tue-close")
       .val()
       .trim(),
-    businessSaturdayHours: $("#sat-open")
+    businessWednesdayHoursOpen: $("#wed-open")
+      .val()
+      .trim(),
+    businessWednesdayHoursClose: $("#wed-close")
+      .val()
+      .trim(),
+    businessThursdayHoursOpen: $("#thu-open")
+      .val()
+      .trim(),
+    businessThursdayHoursClose: $("#thu-close")
+      .val()
+      .trim(),
+    businessFridayHoursOpen: $("#fri-open")
+      .val()
+      .trim(),
+    businessFridayHoursClose: $("#fri-close")
+      .val()
+      .trim(),
+    businessSaturdayHoursOpen: $("#sat-open")
+      .val()
+      .trim(),
+    businessSaturdayHoursClose: $("#sat-close")
       .val()
       .trim(),
     specialSundayHours: $("#newbiz-sun-spec")
