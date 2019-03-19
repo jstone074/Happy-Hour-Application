@@ -93,27 +93,41 @@ body, html {
 
 
 /* BUSINESS ACCOUNT PAGE */
-
-/* .delete-business-btn {
-   background-color: red;
-   border-color: red;
-}
-.delete-business-btn:hover {
-   background-color: rgb(212, 0, 0);
-   border-color: rgb(212, 0, 0);
-}
-
-#list-description {
-   margin-top: 20px;
-   padding-top: 20px;
-   text-align: center;
-} */
 #welcome {
    text-align: center;
 }
-#business-jumbotron {
-   margin-top: 20px;
-   padding-top: 10px;
-   color: black;
-   background-color: #f3b225;
+.business-jumbotron {
+   padding: 10px;
+   background-color: #DCDCDC;
+}
+#add-business-card {
+   padding: 10px;
+   background-color: #DCDCDC;
+   border: none;
+}
+body {
+   background-color: #DCDCDC;
+}
+#business-table {
+   font-size: 12px;
+}
+#business-header {
+   text-align: center;
+   background-image: url("https://static1.squarespace.com/static/574dba8f40261d24799c1fbb/t/5a3d2480e4966b9c85b44fb4/1513956484574/beer-suds_web.jpg");
+   font-family: 'Playfair Display', serif;
+   font-size: 30px;
+}
+.b-header-text {
+   background: -webkit-linear-gradient( #f5a505, #6b4a01);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+/* Global modal styling */
+
+.close-modal-btn {
+   background-color: rgb(236, 202, 49);
+}
+
+.delete {
+   background-color: red;
 }

@@ -14,7 +14,6 @@ module.exports = function(app) {
     }
   });
 
-
   app.get("/api/login", function(req, res) {
     // If the user already has an account send them to the members page
     console.log(req.user);
@@ -53,6 +52,7 @@ module.exports = function(app) {
     res.render("user");
   });
 };
+
 // module.exports = function(app) {
 //   // Load index page
 //   app.get("/", function(req, res) {
