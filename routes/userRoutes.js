@@ -1,14 +1,15 @@
 const express = require("express");
 const router = express.Router();
+const db = require("../models");
 
-/* GET users listing. */
-router.get("/", function(req, res, next) {
-  res.send("respond with a resource");
-});
-
-/* GET user profile. */
-router.get("/profile", function(req, res, next) {
-  res.send(req.user);
-});
-
-module.exports = router;
+module.exports = function(app) {
+  app.get("api/user/:id", (req, res) => {
+    db.User.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbUser => {
+      res.json(dbUser);
+    });
+  });
+};
