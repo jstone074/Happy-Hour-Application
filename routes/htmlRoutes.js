@@ -16,8 +16,8 @@ module.exports = function(app) {
 
   app.get("/api/login", function(req, res) {
     // If the user already has an account send them to the members page
-    console.log(req.user);
-    console.log(req.body);
+    // console.log(req.user);
+    // console.log(req.body);
     if (req.user) {
       res.redirect("/members");
       // if (req.body.user.isBusiness) {
