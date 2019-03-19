@@ -89,10 +89,7 @@ const createNewBusiness = event => {
       .trim(),
     businessAddress: $("#new-business-address")
       .val()
-      .trim()
-  };
-
-  const businessHours = {
+      .trim(),
     businessSundayHours: $("#sun-open")
       .val()
       .trim(),
@@ -113,36 +110,33 @@ const createNewBusiness = event => {
       .trim(),
     businessSaturdayHours: $("#sat-open")
       .val()
-      .trim()
-  };
-
-  const businessSpecails = {
-    businessSundayHours: $("#newbiz-sun-spec")
+      .trim(),
+    specialSundayHours: $("#newbiz-sun-spec")
       .val()
       .trim(),
-    businessMondayHours: $("#newbiz-mon-spec")
+    specialMondayHours: $("#newbiz-mon-spec")
       .val()
       .trim(),
-    businessTuesdayHours: $("#newbiz-tue-spec")
+    specialTuesdayHours: $("#newbiz-tue-spec")
       .val()
       .trim(),
-    businessWednesdayHours: $("#newbiz-wed-spec")
+    specialWednesdayHours: $("#newbiz-wed-spec")
       .val()
       .trim(),
-    businessThrusdayHours: $("#newbiz-thu-spec")
+    specialThursdayHours: $("#newbiz-thu-spec")
       .val()
       .trim(),
-    businessFridayHours: $("#newbiz-fri-spec")
+    specialFridayHours: $("#newbiz-fri-spec")
       .val()
       .trim(),
-    businessSaturdayHours: $("#newbiz-sat-spec")
+    specialSaturdayHours: $("#newbiz-sat-spec")
       .val()
       .trim()
   };
-  console.log(businessInfo, businessHours, businessSpecails);
+  console.log(businessInfo);
 
-  API.postMethod(businessHours, "business");
-  API.postMethod(businessSpecails, "business");
+  // API.postMethod(businessHours, "business");
+  // API.postMethod(businessSpecails, "business");
   API.postMethod(businessInfo, "business");
 
   // $("#signup-username").val("");

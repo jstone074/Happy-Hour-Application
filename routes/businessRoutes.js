@@ -6,9 +6,23 @@ module.exports = function(app) {
   app.post("/api/business", (req, res) => {
     console.log("Business Routes Body " + req.body);
     db.Business.create({
-      business_name: req.body.businessName,
-      business_phone: req.body.businessPhone,
-      business_address: req.body.businessAddress,
+      businessName: req.body.businessName,
+      businessPhone: req.body.businessPhone,
+      businessAddress: req.body.businessAddress,
+      openHourSunday: req.body.businessSundayHours,
+      openHourMonday: req.body.businessMondayHours,
+      openHourTuesday: req.body.businessTuesdayHours,
+      openHourWednesday: req.body.businessWednesdayHours,
+      openHourThursday: req.body.businessThrusdayHours,
+      openHourFriday: req.body.businessFridayHours,
+      openHourSaturday: req.body.businessSaturdayHours,
+      specialSunday: req.body.specialSundayHours,
+      specialMonday: req.body.specialMondayHours,
+      specialTuesday: req.body.specialTuesdayHours,
+      specialWednesday: req.body.specialWednesdayHours,
+      specialThursday: req.body.specialThursdayHours,
+      specialFriday: req.body.specialFridayHours,
+      specialSaturday: req.body.specialSaturdayHours,
       UserId: req.user.id
     }).then(dbBusiness => {
       res.json(dbBusiness);
