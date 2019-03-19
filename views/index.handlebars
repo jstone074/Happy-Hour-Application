@@ -1,8 +1,8 @@
 <div id="home">
-  <div class="container">
-    <div class="row">
+  <div class="container menu-container">
+    <div class="row text-right">
       <div class="col-12-lg">
-        <p id="page-name">HAPPY HOUR</p>
+        <p class="header-text">HAPPY HOUR</p>
       </div>
     </div>
     {{!-- login button --}}
@@ -12,70 +12,84 @@
       </div>
       <div class="col-6-md" id="login-div">
         <h2 id="already-user">Already a user?</h2>
-        <button id="login-btn" type="button" class="btn btn-info btn-lg" data-toggle="modal"
+        <button id="login-btn" type="button" class="btn btn-info btn-lg b-btn" data-toggle="modal"
           data-target="#login-modal">LOGIN</button>
       </div>
     </div>
-  </div>
-  {{!-- sign-up form --}}
-  <div class="container form-container">
-    <form>
-      {{!-- email entry --}}
-      <div class="form-group row">
-        <label for="signup-email" class="col-sm-2 col-form-label">Email</label>
-        <div class="col-sm-10">
-          <input type="email" class="form-control" id="signup-email" placeholder="Enter Your Email">
-        </div>
-      </div>
-      {{!-- password entry --}}
-      <div class="form-group row">
-        <label for="signup-password" class="col-sm-2 col-form-label">Password</label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword3" placeholder="Choose Your Password">
-        </div>
-      </div>
-      {{!-- username entry --}}
-      <div class="form-group row">
-        <label for="signup-username" class="col-sm-2 col-form-label">Username</label>
-        <div class="col-sm-10">
-          <input type="username" class="form-control" id="signup-username" placeholder="Choose Your Username">
-        </div>
-      </div>
-      {{!-- phone entry --}}
-       <div class="form-group row">
-        <label for="signup-phone" class="col-sm-2 col-form-label">Phone</label>
-        <div class="col-sm-10">
-          <input type="phone" class="form-control" id="signup-phone" placeholder="(000)-000-0000">
-        </div>
-      </div>
-      <fieldset class="form-group">
-        <div class="row">
-          {{!-- account type --}}
-          <legend class="col-form-label col-sm-2 pt-0">Account Type</legend>
-          <div class="col-sm-10">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="account-user" value="false" checked>
-              <label class="form-check-label" for="account-user">
-                User Account
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="account-business" value="true">
-              <label class="form-check-label" for="account-business">
-                Business Account
-              </label>
+    <div class="row">
+      <div class="col-md-6">
+        {{!-- sign-up form --}}
+        <form class="form-container">
+          {{!-- email entry --}}
+          <div class="form-group row">
+            <label for="signup-email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="signup-email" placeholder="Enter Your Email">
             </div>
           </div>
-        </div>
-      </fieldset>
-      <div class="form-group row">
-        <div class="col-sm-10">
-          {{!-- sign-in button --}}
-          <button type="submit" class="btn btn-primary" id="signup-submit-btn">Sign in</button>
-        </div>
+          {{!-- password entry --}}
+          <div class="form-group row">
+            <label for="signup-password" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="inputPassword3" placeholder="Choose Your Password">
+            </div>
+          </div>
+          {{!-- username entry --}}
+          <div class="form-group row">
+            <label for="signup-username" class="col-sm-2 col-form-label">Username</label>
+            <div class="col-sm-10">
+              <input type="username" class="form-control" id="signup-username" placeholder="Choose Your Username">
+            </div>
+          </div>
+          {{!-- phone entry --}}
+          <div class="form-group row">
+            <label for="signup-phone" class="col-sm-2 col-form-label">Phone</label>
+            <div class="col-sm-10">
+              <input type="phone" class="form-control" id="signup-phone" placeholder="(000)-000-0000">
+            </div>
+          </div>
+          <fieldset class="form-group">
+            <div class="row">
+              {{!-- account type --}}
+              <legend class="col-form-label col-sm-2 pt-0">Account Type</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="account-user" value="false"
+                    checked>
+                  <label class="form-check-label" for="account-user">
+                    User Account
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="account-business" value="true">
+                  <label class="form-check-label" for="account-business">
+                    Business Account
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              {{!-- sign-in button --}}
+              <button type="submit" class="btn btn-primary b-btn" id="signup-submit-btn">Sign in</button>
+            </div>
+          </div>
+        </form>
       </div>
-    </form>
-
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <!-- Footer -->
+        <footer class="page-footer font-small blue pt-4">
+          <!-- Copyright -->
+          <div class="footer-copyright py-3 home-footer">
+            <a class="b-btn" href="https://github.com/jstone074/Project-2">© 2019 Copyright: DreamTeam</a>
+          </div>
+          <!-- Copyright -->
+        </footer>
+      </div>
+    </div>
   </div>
 </div>
 {{!-- MODAL --}}

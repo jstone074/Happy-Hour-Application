@@ -1,88 +1,98 @@
-<div class="jumbotron jumbotron-fluid" id="business-header">
+<div class="jumbotron jumbotron-fluid page-header">
   <div class="container">
-    <h1 class="display-4 b-header-text">Happy Hour Business Manager</h1>
-    <p class="lead b-header-text">Add a business to your account if you don't have one already or edit one if you do.
+    <h1 class="display-4 header-text">Happy Hour Business Manager</h1>
+    <p class="lead header-text business-slogan">Welcome to your business page.</p><br><br><br>
     </p>
   </div>
 </div>
 <div class="container">
-  {{!-- account options --}}
+  {{!-- business jumbotron --}}
+  {{!-- displays current business info --}}
+  <div class="jumbotron" id="business-jumbotron">
+    {{!-- name --}}
+    <h1 class="display-4" id="b-name">Restaurant Name</h1>
+    <button id="edit-business-btn" type="button" class="btn btn-primary btn-lg float-right b-btn" data-toggle="modal"
+      {{!-- edit button --}} data-target="#edit-business-modal">Edit Business</button>
+    {{!-- phone --}}
+    <p class="lead font-20" id="b-phone">(000)-000-0000</p>
+    <hr class="my-4">
+    {{!-- address --}}
+    <p class="font-20" id="b-address">Address</p>
+    {{!-- operating hours table --}}
+    <table class="table table-hover table-dark style-table" id="business-table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th class="day-of-the-week" scope="col">Sunday</th>
+          <th class="day-of-the-week" scope="col">Monday</th>
+          <th class="day-of-the-week" scope="col">Tuesday</th>
+          <th class="day-of-the-week" scope="col">Wednesday</th>
+          <th class="day-of-the-week" scope="col">Thursday</th>
+          <th class="day-of-the-week" scope="col">Friday</th>
+          <th class="day-of-the-week" scope="col">Saturday</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Operating Hours</th>
+          <td class="op-hours">10:00am-10:00pm</td>
+          <td class="op-hours">10:00am-10:00pm</td>
+          <td class="op-hours">10:00am-10:00pm</td>
+          <td class="op-hours">10:00am-10:00pm</td>
+          <td class="op-hours">10:00am-10:00pm</td>
+          <td class="op-hours">10:00am-10:00pm</td>
+          <td class="op-hours">10:00am-10:00pm</td>
+        </tr>
+        <tr>
+          <th scope="row">Specials</th>
+          <td class="specials">Enter Special Here</td>
+          <td class="specials">Enter Special Here</td>
+          <td class="specials">Enter Special Here</td>
+          <td class="specials">Enter Special Here</td>
+          <td class="specials">Enter Special Here</td>
+          <td class="specials">Enter Special Here</td>
+          <td class="specials">Enter Special Here</td>
+        </tr>
+      </tbody>
+    </table>
+    <button id="logout-btn" type="button" href="/" class="btn btn-primary btn-lg float-right b-btn">Logout</button>
+  </div>
   <div class="row">
-    <div class="col-md-8">
-      <div class="jumbotron business-jumbotron" id="business-jumbotron">
-        <h1 class="display-4" id="b-name">Restaurant Name</h1>
-        <button id="edit-business-btn" type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal"
-          data-target="#edit-business-modal">Edit Business</button>
-        <p class="lead" id="b-phone">(000)-000-0000</p>
-        <hr class="my-4">
-        <p id="b-address">Address</p>
-        {{!-- operating hours table --}}
-        <table class="table table-hover table-dark" id="business-table">
-          <thead>
-            <tr>
-              <th scope="col"></th>
-              <th class="day-of-the-week" scope="col">Sunday</th>
-              <th class="day-of-the-week" scope="col">Monday</th>
-              <th class="day-of-the-week" scope="col">Tuesday</th>
-              <th class="day-of-the-week" scope="col">Wednesday</th>
-              <th class="day-of-the-week" scope="col">Thursday</th>
-              <th class="day-of-the-week" scope="col">Friday</th>
-              <th class="day-of-the-week" scope="col">Saturday</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Operating Hours</th>
-              <td class="op-hours">10:00am-10:00pm</td>
-              <td class="op-hours">10:00am-10:00pm</td>
-              <td class="op-hours">10:00am-10:00pm</td>
-              <td class="op-hours">10:00am-10:00pm</td>
-              <td class="op-hours">10:00am-10:00pm</td>
-              <td class="op-hours">10:00am-10:00pm</td>
-              <td class="op-hours">10:00am-10:00pm</td>
-            </tr>
-            <tr>
-              <th scope="row">Specials</th>
-              <td class="specials">Enter Special Here</td>
-              <td class="specials">Enter Special Here</td>
-              <td class="specials">Enter Special Here</td>
-              <td class="specials">Enter Special Here</td>
-              <td class="specials">Enter Special Here</td>
-              <td class="specials">Enter Special Here</td>
-              <td class="specials">Enter Special Here</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="container">
-        <div class="card" id="add-business-card" style="width: 18rem;">
+    <div class="col-md-12">
+      <div class="container" id="add-business-container">
+        <div class="card add-b-card" id="add-business-card" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title">Would you like to add a business?</h5>
-            <p class="card-text">Adding a business will allow you to reach your favorite.</p>
+            <p class="card-text">Adding a business will allow you to reach your customers.</p>
             {{!-- add business --}}
-            <button id="add-business-btn" type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+            <button id="add-business-btn" type="button" class="btn btn-primary btn-lg b-btn" data-toggle="modal"
               data-target="#add-business-modal">Add Business</button>
           </div>
         </div>
       </div>
     </div>
   </div>
-  {{!-- displays current business info --}}
-
+  <!-- Footer -->
+  <footer class="page-footer font-small blue pt-4">
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+      <a href="https://github.com/jstone074/Project-2">DreamTeam</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
 </div>
-{{!-- add business modal --}}
+
+{{!-- ADD-BUSINESS-MODAL --}}
 <div class="container">
-  <div id="add-business-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+  <div id="add-business-modal" class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog"
     aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header modal-header-txt">
           <h4>Add Business</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body modal-txt">
           {{!-- add business form --}}
           <form>
             {{!-- name --}}
@@ -225,12 +235,12 @@
             {{!-- add business button --}}
             <div class="form-group row">
               <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary" id="confirm-add">Add New Business</button>
+                <button type="submit" class="btn btn-primary b-btn" id="confirm-add">Add New Business</button>
               </div>
             </div>
           </form>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default close-modal-btn" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-default close-modal-btn b-btn" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -240,15 +250,15 @@
 {{!-- end add business modal --}}
 {{!-- start edit business modal --}}
 <div class="container">
-  <div id="edit-business-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+  <div id="edit-business-modal" class="modal fade bd-example-modal-lg modal-bg" tabindex="-1" role="dialog"
     aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header modal-header-txt">
           <h4>Edit Business</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body modal-txt">
           {{!-- add business form --}}
           {{!-- if input field blank create code to not change the data --}}
           <form>
@@ -391,14 +401,14 @@
             {{!-- edit business button --}}
             <div class="form-group row">
               <div class="col-sm-12">
-                <button type="submit" class="btn btn-primary" id="confirm-edit">Confirm Edit</button>
-                <button type="submit" class="btn btn-primary float-right delete" type="button" data-toggle="modal"
+                <button type="submit" class="btn btn-primary b-btn" id="confirm-edit">Confirm Edit</button>
+                <button class="btn btn-primary float-right delete" type="button" data-toggle="modal"
                   data-target="#confirm-delete-modal">Delete Business</button>
               </div>
             </div>
           </form>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default close-modal-btn" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-default close-modal-btn b-btn" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -408,16 +418,15 @@
 {{!-- end edit business modal --}}
 {{!-- confirm delete of account MODAL--}}
 <div class="container">
-  <div id="confirm-delete-modal" class="modal fade" role="dialog">
+  <div id="confirm-delete-modal" class="modal fade modal-bg" role="dialog">
     <div class="modal-dialog">
-
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header modal-header-txt">
           <h4 class="modal-title">Are you sure?</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body modal-txt">
           <p>The deletion of your business will be permanent.</p>
         </div>
         <div class="modal-footer">
@@ -428,31 +437,48 @@
   </div>
 </div>
 {{!-- end delete account MODAL --}}
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
   integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 {{!--business page javascript--}}
 <script type="text/javascript">
   //define variables
   var businessExists = false;
   var newBusiness = {};
-  //$("document").on("load", function {
-  //$("#hb-business-jumbotron").hide();
-  //})
+  var jumbotronHidden = true;
+  var addBusBtnHidden = false;
+  //on load hide business jumbotron
+  $("#business-jumbotron").hide();
+
   //hide add business button when clicked
   $("#add-business-btn").on("click", function () {
-    $(this).hide();
+    $("#add-business-container").hide();
+    addBusBtnHidden = true;
+    detectHiddenElements();
   });
+
+  function detectHiddenElements() {
+    if (addBusBtnHidden === true) {
+      $("#business-jumbotron").show();
+      jumbotronHidden = false;
+    } else {
+      $("#add-business-container").show();
+      addBusBtnHidden = false;
+    };
+  };
+
 
   //gather the business info provided by the new business modal input fields
   $("#confirm-add").on("click", function () {
     newBusiness = {
       info: {
-        bName: $("#new-busines-name").val(),
-        bPhone: $("#new-busines-phone").val(),
-        bAddress: $("#new-busines-address").val(),
+        bName: $("#new-business-name").val(),
+        bPhone: $("#new-business-phone").val(),
+        bAddress: $("#new-business-address").val(),
       },
       hours: {
         sun: {
@@ -495,6 +521,15 @@
       }
     };
     console.log(newBusiness);
+  });
+  $("#logout-btn").on("click", function (res) {
+    $.ajax("/logout", {
+      type: "GET",
+    }).then(
+      function () {
+        res.redirect("/");
+      }
+    );
   });
 
 </script>

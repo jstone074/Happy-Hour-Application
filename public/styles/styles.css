@@ -6,6 +6,16 @@
 body, html {
   height: 100%;
 }
+.menu-container {
+   font-family: 'Playfair Display', serif;
+   position: fixed;
+   left: 65%;
+   top: 5%;
+}
+.home-footer {
+   margin-top: 50px;
+   margin-left: 210px;
+}
 #home {
    background-image: url("https://ichef.bbci.co.uk/images/ic/720x405/p047z06c.jpg");
    height: 100%;
@@ -25,102 +35,154 @@ body, html {
    width: 800px;
    padding-top: 10px;
 }
-#page-name {
-   position: relative;
-   left: 650px;
-   font-family: 'Playfair Display', serif;
-   font-size: 90px;
-   background: -webkit-linear-gradient( #e0dfdd, #f3b225);
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-   padding-left: 10px;
-   margin-bottom: 0px;
-}
 #slogan {
-   background: -webkit-linear-gradient(#f3b225, #e0dfdd);
+   background: -webkit-linear-gradient(#c12213, #f5a505);
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
    font-family: 'Playfair Display', serif;
-   position: relative;
-   left: 670px;
-}
-#login-div {
-   position: relative;
-   left: 745px;
 }
 #login-btn {
-   position: relative;
-   width: 120px;
-   left: 20px;
-   border: 3px rgb(8, 8, 8, .2) ridge;
-   font-family: 'Playfair Display', serif;
-   text-shadow: 2px 2px 4px #000000;
-   background-color: #d8ab4e;
-}
-#login-btn:hover {
-   background-color: rgb(155, 64, 4);
-   border-color: rgb(8, 8, 8, .2);
+   width: 100px;
+   margin-left: 10px;
+   margin-bottom: 20px;
 }
 #already-user {
    color: white;
-   font-size: 21px;
+   font-size: 18px;
+   text-shadow: 2px 2px 4px #000000;
 }
 
 
 /* FORM_CSS */
 .form-container {
    color: white;
-   position: relative;
-   top: 40px;
-   left: 460px;
-   margin-right: 0px;
    font-family: 'Playfair Display', serif;
    text-shadow: 2px 2px 4px #000000;
 }
 .form-control {
-   width: 400px;
-}
-#signup-submit-btn {
-   background-color:#d8ab4e;
-   border: 3px rgb(8, 8, 8, .2) ridge;
-   font-family: 'Playfair Display', serif;
-   text-shadow: 2px 2px 4px #000000;
-}
-#signup-submit-btn:hover {
-   background-color: rgb(155, 64, 4);
-   border-color: rgb(8, 8, 8, .2);
+   width: 350px;
 }
 
 
 /* BUSINESS ACCOUNT PAGE */
-#welcome {
-   text-align: center;
+#business-jumbotron {
+   margin-top: 10px;
+   padding: 40px;
+   padding-bottom: 93px;
+   background-color: #f1e7de;
+   margin-bottom: 0px;
+   font-family: 'Playfair Display', serif;
+   color: #fec200;
+   text-shadow: 2px 2px 4px #020202;
+   border: 3px outset #c12213;
 }
-.business-jumbotron {
-   padding: 10px;
-   background-color: #DCDCDC;
+.modal-txt {
+   font-family: 'Playfair Display', serif;
+}
+.modal-header-txt {
+   font-family: 'Playfair Display', serif;
 }
 #add-business-card {
    padding: 10px;
-   background-color: #DCDCDC;
-   border: none;
+   background-color: #f1e7de;
+   font-family: 'Playfair Display', serif;
+   color: #ca8804;
+   text-shadow: 2px 2px 4px #faf4f4;
+   border: 3px outset #c12213;
+}
+.delete {
+   color: black;
+   font-family: 'Playfair Display', serif;
+}
+.delete:hover {
+   background-color: rgb(185, 1, 1);
+}
+.b-btn {
+   color: #c12213;
+   background-color: #fec200;
+   border-color: #fec200;
+   border: 3px outset #c12213;
+}
+.b-btn:hover {
+   background-color: #feb100;
+   border-color: #feb100;
 }
 body {
-   background-color: #DCDCDC;
+   background-color: #feb100;
 }
-#business-table {
-   font-size: 12px;
+.style-table {
+   font-size: 16px;
+   background-color: #f3b225;
+   border: 3px outset #c12213;
+   font-family: 'Playfair Display', serif;
+   text-shadow: 2px 2px 4px #020202;
 }
-#business-header {
+.page-header {
    text-align: center;
    background-image: url("https://static1.squarespace.com/static/574dba8f40261d24799c1fbb/t/5a3d2480e4966b9c85b44fb4/1513956484574/beer-suds_web.jpg");
-   font-family: 'Playfair Display', serif;
+   
    font-size: 30px;
+   margin-bottom: 0px;
+   padding-top: 20px;
+   padding-bottom: 20px;
 }
-.b-header-text {
-   background: -webkit-linear-gradient( #f5a505, #6b4a01);
+.header-text {
+   font-family: 'Playfair Display', serif;
+   background: -webkit-linear-gradient( #f5a505, #c12213);
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
+   font-size: 60px;
+}
+.business-slogan {
+   font-size: 30px;
+}
+#add-business-container {
+   margin-top: 10px;
+}
+.add-b-card {
+   text-align: center;
+   margin: 0 auto;
+   font-size: 25px;
+}
+
+/* USER CSS */
+
+#user-slogan {
+   font-size: 30px;
+}
+.font-20 {
+   font-size: 30px;
+   text-shadow: none;
+   color: #c12213;
+}
+.username-text {
+   color: #c12213;
+   text-shadow: 2px 2px 4px #020202;
+   font-size: 120px;
+   margin: 0px;
+   padding-top: 40px;
+   padding-bottom: 0px;
+   font-family: 'Playfair Display', serif;
+}
+#user-bar-list {
+   margin-top: 20px;
+   font-size: 16px;
+   background-color: #faf4f4;
+   border: 3px outset #c12213;
+   color: #e0dfdd;
+   font-family: 'Playfair Display', serif;
+   text-shadow: 2px 2px 4px #000000;
+}
+#column-names {
+   color: #c12213;
+   text-shadow: none;
+}
+#column-content {
+   color: #f7c553;
+   text-shadow: none;
+}
+#user-edit-account {
+   border: 3px outset #c12213;
 }
 /* Global modal styling */
 
