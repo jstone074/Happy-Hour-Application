@@ -90,41 +90,38 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-            
 <script>
     $(document).ready(() => {
-      console.log("User hbars script is working");
       getBars();
       function getBars() {
-          $.get("/api/bars", data => {
-            for (let i = 0; i < data.length; i++) {
-                console.dir(data);
-                let newHours = $("<td>");
-                newHours.append("<p> Sun: " + data[i].openHourSunday +"</p>");
-                newHours.append("<p> Mon: " + data[i].openHourMonday +"</p>");
-                newHours.append("<p> Tue: " + data[i].openHourTuesday +"</p>");
-                newHours.append("<p> Wed: " + data[i].openHourWednesday +"</p>");
-                newHours.append("<p> Thu: " + data[i].openHourThursday +"</p>");
-                newHours.append("<p> Fri: " + data[i].openHourFriday +"</p>");
-                newHours.append("<p> Sat: " + data[i].openHourSaturday +"</p>");
+        $.get("/api/bars", data => {
+          for (let i = 0; i < data.length; i++) {
+            let newHours = $("<td>");
+            newHours.append("<p> Sun:  " + data[i].openHourSunday + "  -  " + data[i].closeHourSunday + "</p>");
+            newHours.append("<p> Mon:  " + data[i].openHourMonday + "  -  " + data[i].closeHourMonday + "</p>");
+            newHours.append("<p> Tue:  " + data[i].openHourTuesday + "  -  " + data[i].closeHourTuesday + "</p>");
+            newHours.append("<p> Wed:  " + data[i].openHourWednesday + "  -  " + data[i].closeHourWednesday + "</p>");
+            newHours.append("<p> Thu:  " + data[i].openHourThursday + "  -  " + data[i].closeHourThursday + "</p>");
+            newHours.append("<p> Fri:  " + data[i].openHourFriday + "  -  " + data[i].closeHourFriday + "</p>");
+            newHours.append("<p> Sat:  " + data[i].openHourSaturday + "  -  " + data[i].closeHourSaturday + "</p>");
 
-                let newSpecials = $("<td>");
-                newSpecials.append("<p> Sun: " + data[i].specialSunday +"</p>");
-                newSpecials.append("<p> Mon: " + data[i].specialMonday +"</p>");
-                newSpecials.append("<p> Tue: " + data[i].specialTuesday +"</p>");
-                newSpecials.append("<p> Wed: " + data[i].specialWednesday +"</p>");
-                newSpecials.append("<p> Thu: " + data[i].specialThursday +"</p>");
-                newSpecials.append("<p> Fri: " + data[i].specialFriday +"</p>");
-                newSpecials.append("<p> Sat: " + data[i].specialSaturday +"</p>");
+            let newSpecials = $("<td>");
+            newSpecials.append("<p> Sun: " + data[i].specialSunday + "</p>");
+            newSpecials.append("<p> Mon: " + data[i].specialMonday + "</p>");
+            newSpecials.append("<p> Tue: " + data[i].specialTuesday + "</p>");
+            newSpecials.append("<p> Wed: " + data[i].specialWednesday + "</p>");
+            newSpecials.append("<p> Thu: " + data[i].specialThursday + "</p>");
+            newSpecials.append("<p> Fri: " + data[i].specialFriday + "</p>");
+            newSpecials.append("<p> Sat: " + data[i].specialSaturday + "</p>");
 
-                let newRow = $("<tr>");
-                newRow.data("id", data.businessName);
-                newRow.append("<td>" + data[i].businessName + "</td>");
-                newRow.append(newHours);
-                newRow.append(newSpecials);
-                $("tbody").append(newRow);
-            };
-          });
+            let newRow = $("<tr>");
+            newRow.data("id", data.businessName);
+            newRow.append("<td>" + data[i].businessName + "</td>");
+            newRow.append(newHours);
+            newRow.append(newSpecials);
+            $("tbody").append(newRow);
+          };
+        });
       };
     });
 </script>

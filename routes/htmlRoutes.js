@@ -3,7 +3,6 @@
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
-
 module.exports = function(app) {
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
@@ -28,8 +27,6 @@ module.exports = function(app) {
     } else {
       console.log("error in htmlRoutes, user not found or something");
     }
-
-
   });
 
   // Here we've add our isAuthenticated middleware to this route.
