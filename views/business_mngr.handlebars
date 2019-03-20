@@ -67,6 +67,8 @@
             {{!-- add business --}}
             <button id="add-business-btn" type="button" class="btn btn-primary btn-lg b-btn" data-toggle="modal"
               data-target="#add-business-modal">Add Business</button>
+            <button id="logout-btn" type="button" href="/"
+              class="btn btn-primary btn-lg b-btn add-b-card-logout">Logout</button>
           </div>
         </div>
       </div>
@@ -445,11 +447,11 @@
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="/js/index.js"></script>
 
+
 {{!--business page javascript--}}
-{{!-- <script type="text/javascript">
-  //define variables
+<script type="text/javascript">
+
   var businessExists = false;
-  var newBusiness = {};
   var jumbotronHidden = true;
   var addBusBtnHidden = false;
   //on load hide business jumbotron
@@ -459,6 +461,9 @@
   $("#add-business-btn").on("click", function () {
     $("#add-business-container").hide();
     addBusBtnHidden = true;
+  });
+
+  $("#confirm-add").on("click", function () {
     detectHiddenElements();
   });
 
@@ -471,66 +476,5 @@
       addBusBtnHidden = false;
     };
   };
-
-
-  //gather the business info provided by the new business modal input fields
-  $("#confirm-add").on("click", function () {
-    newBusiness = {
-      info: {
-        bName: $("#new-business-name").val(),
-        bPhone: $("#new-business-phone").val(),
-        bAddress: $("#new-business-address").val(),
-      },
-      hours: {
-        sun: {
-          open: $("#sun-open").val(),
-          close: $("#sun-close").val()
-        },
-        mon: {
-          open: $("#mon-open").val(),
-          close: $("#mon-close").val()
-        },
-        tue: {
-          open: $("#tue-open").val(),
-          close: $("#tue-close").val()
-        },
-        wed: {
-          open: $("#wed-open").val(),
-          close: $("#wed-close").val()
-        },
-        thu: {
-          open: $("#thu-open").val(),
-          close: $("#thu-close").val()
-        },
-        fri: {
-          open: $("#fri-open").val(),
-          close: $("#fri-close").val()
-        },
-        sat: {
-          open: $("#sat-open").val(),
-          close: $("#sat-close").val()
-        }
-      },
-      specials: {
-        sun: $("#newbiz-sun-spec").val(),
-        mon: $("#newbiz-mon-spec").val(),
-        tue: $("#newbiz-tue-spec").val(),
-        wed: $("#newbiz-wed-spec").val(),
-        thu: $("#newbiz-thu-spec").val(),
-        fri: $("#newbiz-fri-spec").val(),
-        sat: $("#newbiz-sat-spec").val()
-      }
-    };
-    console.log(newBusiness);
-  });
-  $("#logout-btn").on("click", function (res) {
-    $.ajax("/logout", {
-      type: "GET",
-    }).then(
-      function () {
-        res.redirect("/");
-      }
-    );
-  });
 
 </script> --}}
