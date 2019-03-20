@@ -144,7 +144,9 @@ body {
    margin: 0 auto;
    font-size: 25px;
 }
-
+.add-b-card-logout {
+   margin-top: 10px;
+}
 /* USER CSS */
 
 #user-slogan {
@@ -176,9 +178,10 @@ body {
 #column-names {
    color: #c12213;
    text-shadow: none;
+   font-size: 30px;
 }
 #column-content {
-   color: #f7c553;
+   color: #ea5705;
    text-shadow: none;
 }
 #user-edit-account {
