@@ -1,4 +1,4 @@
-//var db = require("../models");
+var db = require("../models");
 
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
@@ -13,17 +13,12 @@ module.exports = function(app) {
     }
   });
 
+  app.get("/api/business/");
+
   app.get("/api/login", function(req, res) {
     // If the user already has an account send them to the members page
-    // console.log(req.user);
-    // console.log(req.body);
     if (req.user) {
       res.redirect("/members");
-      // if (req.body.user.isBusiness) {
-      // res.render("business_mngr");
-      // } else {
-      //   res.render("user");
-      // }
     } else {
       console.log("error in htmlRoutes, user not found or something");
     }
@@ -35,18 +30,26 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, function(req, res) {
     console.log(req.user);
     if (req.user.isBusiness) {
-      res.render("business_mngr");
+      db.Business.findOne({
+        where: {
+          UserId: req.user.id
+        }
+      }).then(dbBusiness => {
+        console.log(dbBusiness);
+        return res.render("business_mngr", dbBusiness);
+      });
+      console.log("htmlRoutes user ID: " + req.user.id);
     } else {
       res.render("user", { username: req.user.username });
     }
   });
 
-  app.get("/business", function(req, res) {
-    res.render("business_mngr");
-  });
-  app.get("/user", function(req, res) {
-    res.render("user");
-  });
+  // app.get("/business", function(req, res) {
+  //   res.render("business_mngr");
+  // });
+  // app.get("/user", function(req, res) {
+  //   res.render("user");
+  // });
 };
 
 // module.exports = function(app) {
