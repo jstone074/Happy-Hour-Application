@@ -37,7 +37,7 @@ module.exports = function(app) {
     if (req.user.isBusiness) {
       res.render("business_mngr");
     } else {
-      res.render("user");
+      res.render("user", { username: req.user.username });
     }
   });
 
