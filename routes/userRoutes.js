@@ -1,14 +1,15 @@
-const express = require("express");
-const router = express.Router();
+var db = require("../models");
 
-/* GET users listing. */
-router.get("/", function(req, res, next) {
-  res.send("respond with a resource");
-});
+module.exports = function(app) {
+  // GET Bars
+  app.get("/api/bars", function(req, res) {
+    db.Business.findAll({}).then(data => {
+      res.json(data);
+    });
+  });
 
-/* GET user profile. */
-router.get("/profile", function(req, res, next) {
-  res.send(req.user);
-});
-
-module.exports = router;
+  //display the username of the user currently logged in
+  app.get("/api/me", (req, res) => {
+    res.json(req.user.username);
+  });
+};
