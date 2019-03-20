@@ -41,16 +41,6 @@ module.exports = function(app) {
   });
 
   // Display business info
-  app.get("/api/business/:id", (req, res) => {
-    db.Business.findOne({
-      where: {
-        id: req.params.id
-      },
-      include: [db.Hours]
-    }).then(dbBusiness => {
-      res.json(dbBusiness);
-    });
-  });
 
   // Update business info
   app.put("/api/business", (req, res) => {

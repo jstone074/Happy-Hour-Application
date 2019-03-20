@@ -10,14 +10,14 @@
   {{!-- displays current business info --}}
   <div class="jumbotron" id="business-jumbotron">
     {{!-- name --}}
-    <h1 class="display-4" id="b-name">Restaurant Name</h1>
+    <h1 class="display-4" id="b-name">{{dataValues.businessName}}</h1>
     <button id="edit-business-btn" type="button" class="btn btn-primary btn-lg float-right b-btn" data-toggle="modal"
       {{!-- edit button --}} data-target="#edit-business-modal">Edit Business</button>
     {{!-- phone --}}
-    <p class="lead font-20" id="b-phone">(000)-000-0000</p>
+    <p class="lead font-20" id="b-phone">{{dataValues.businessPhone}}</p>
     <hr class="my-4">
     {{!-- address --}}
-    <p class="font-20" id="b-address">Address</p>
+    <p class="font-20" id="b-address">{{dataValues.businessAddress}}</p>
     {{!-- operating hours table --}}
     <table class="table table-hover table-dark style-table" id="business-table">
       <thead>
@@ -35,27 +35,27 @@
       <tbody>
         <tr>
           <th scope="row">Operating Hours</th>
-          <td class="op-hours">10:00am-10:00pm</td>
-          <td class="op-hours">10:00am-10:00pm</td>
-          <td class="op-hours">10:00am-10:00pm</td>
-          <td class="op-hours">10:00am-10:00pm</td>
-          <td class="op-hours">10:00am-10:00pm</td>
-          <td class="op-hours">10:00am-10:00pm</td>
-          <td class="op-hours">10:00am-10:00pm</td>
+          <td class="op-hours">{{dataValues.openHourSunday}}-{{dataValues.closeHourSunday}}</td>
+          <td class="op-hours">{{dataValues.openHourMonday}}-{{dataValues.closeHourMonday}}</td>
+          <td class="op-hours">{{dataValues.openHourTuesday}}-{{dataValues.closeHourTuesday}}</td>
+          <td class="op-hours">{{dataValues.openHourWednesday}}-{{dataValues.closeHourWednesday}}</td>
+          <td class="op-hours">{{dataValues.openHourThursday}}-{{dataValues.closeHourThursday}}</td>
+          <td class="op-hours">{{dataValues.openHourFriday}}-{{dataValues.closeHourFriday}}</td>
+          <td class="op-hours">{{dataValues.openHourSaturday}}-{{dataValues.closeHourSaturday}}</td>
         </tr>
         <tr>
           <th scope="row">Specials</th>
-          <td class="specials">Enter Special Here</td>
-          <td class="specials">Enter Special Here</td>
-          <td class="specials">Enter Special Here</td>
-          <td class="specials">Enter Special Here</td>
-          <td class="specials">Enter Special Here</td>
-          <td class="specials">Enter Special Here</td>
-          <td class="specials">Enter Special Here</td>
+          <td class="specials">{{dataValues.specialSunday}}</td>
+          <td class="specials">{{dataValues.specialMonday}}</td>
+          <td class="specials">{{dataValues.specialTuesday}}</td>
+          <td class="specials">{{dataValues.specialWednesday}}</td>
+          <td class="specials">{{dataValues.specialThursday}}</td>
+          <td class="specials">{{dataValues.specialFriday}}</td>
+          <td class="specials">{{dataValues.specialSaturday}}</td>
         </tr>
       </tbody>
     </table>
-    <button id="logout-btn" type="button" href="/" class="btn btn-primary btn-lg float-right b-btn">Logout</button>
+    <a id="logout-btn" type="button" href="/logout" class="btn btn-primary btn-lg float-right b-btn">Logout</a>
   </div>
   <div class="row">
     <div class="col-md-12">
@@ -448,14 +448,14 @@
 <script src="/js/index.js"></script>
 
 
-{{!--business page javascript--}}
+{{!-- 
 <script type="text/javascript">
 
   var businessExists = false;
   var jumbotronHidden = true;
   var addBusBtnHidden = false;
   //on load hide business jumbotron
-  $("#business-jumbotron").hide();
+  //$("#business-jumbotron").hide();
 
   //hide add business button when clicked
   $("#add-business-btn").on("click", function () {

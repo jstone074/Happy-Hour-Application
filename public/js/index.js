@@ -154,6 +154,7 @@ const createNewBusiness = event => {
   // $("#signup-email").val("");
   // $("#signup-phone").val("");
   // $("#inputPassword3").val("");
+  location.reload();
 };
 
 // delete business

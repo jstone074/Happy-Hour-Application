@@ -1,8 +1,6 @@
 {
   "development": {
     "username": "root",
-    "password": "Wbears!6",
-    "database": "happy_hour_db",
     "password": "Riften#333",
     "database": "testing_db",
     "host": "localhost",
