@@ -63,7 +63,7 @@ module.exports = function(app) {
   // ----- HOURS -----
 
   // Add opening hours
-  app.post("/api/hours", (req, res ) => {
+  app.post("/api/hours", (req, res) => {
     console.log("Hours Routes Body " + req.body);
     db.Hour.create({
       sunday: req.body.businessSundayHours,
@@ -110,13 +110,24 @@ module.exports = function(app) {
   });
 
   // Update specials
-  app.put("/api/specials", (req, res) => {
-    db.Specials.update(req.body, {
-      where: {
-        id: req.body.id
+  app.put("/api/editSpecials", (req, res) => {
+    db.Business.update(
+      {
+        specialSunday: req.body.sun,
+        specialMonday: req.body.mon,
+        specialTuesday: req.body.tue,
+        specialWednesday: req.body.wed,
+        specialThursday: req.body.thu,
+        specialFriday: req.body.fri,
+        specialSaturday: req.body.sat
+      },
+      {
+        where: {
+          UserId: req.user.id
+        }
       }
-    }).then(dbSpecials => {
-      res.body(dbSpecials);
+    ).then(dbSpecials => {
+      res.json(dbSpecials);
     });
   });
 };
