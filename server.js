@@ -5,6 +5,8 @@ var passport = require("passport");
 //const LocalStrategy = require("passport-local").Strategy;
 var session = require("express-session");
 var bodyParser = require("body-parser");
+var favicon = require("serve-favicon");
+var path = require("path");
 
 var db = require("./models");
 
@@ -13,7 +15,8 @@ var PORT = process.env.PORT || 3000;
 const auth = require("./routes/authRoutes");
 // const user = require("./routes/userRoutes");
 
-// Middleware
+// Serve the favicon
+app.use(favicon(path.join(__dirname + "/public/images/favicon.ico")));
 
 // For Passport
 app.use(
