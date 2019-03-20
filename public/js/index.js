@@ -1,3 +1,5 @@
+// import { finished } from "stream";
+
 // The API object contains methods for each kind of request we'll make
 // They each have a 'route' argument to accomodate different routes with the same call
 
@@ -157,28 +159,6 @@ const createNewBusiness = event => {
   location.reload();
 };
 
-// delete business
-const deleteBusinessClick = () => {
-  const idToDelete = $(this)
-    .parent()
-    .attr("data-id");
-
-  API.deleteMethod(idToDelete).then(function() {
-    // Go to landing page
-  });
-};
-
-// delete user
-const deleteUserClick = () => {
-  const idToDelete = $(this)
-    .parent()
-    .attr("data-id");
-
-  API.deleteMethod(idToDelete).then(function() {
-    // Go to landing page
-  });
-};
-
 const loginUser = (email, password) => {
   $.post("/api/login", {
     email: email,
@@ -218,9 +198,43 @@ $("#submit-login-btn").on("click", event => {
   $("#login-password").val("");
 });
 
+$("#confirm-edit").on("click", event => {
+  event.preventDefault();
+  const editInfo = {
+    sun: $("#edit-sun-spec")
+      .val()
+      .trim(),
+    mon: $("#edit-mon-spec")
+      .val()
+      .trim(),
+    tue: $("#edit-tue-spec")
+      .val()
+      .trim(),
+    wed: $("#edit-wed-spec")
+      .val()
+      .trim(),
+    thu: $("#edit-thu-spec")
+      .val()
+      .trim(),
+    fri: $("#edit-fri-spec")
+      .val()
+      .trim(),
+    sat: $("#edit-sat-spec")
+      .val()
+      .trim(),
+    UserId: $("#b-name").data("id")
+  };
+  console.log(",.,.,.,.,.,.,.<><><><><>, USER ID: " + editInfo.UserID);
+  console.log("<<>>>>>><><><><><><><EDIT INFO ON INDEX.JS <<<<<<<" + editInfo);
+  $.ajax({
+    method: "PUT",
+    url: "/api/editSpecials",
+    data: editInfo
+  }).then(() => {
+    location.reload();
+  });
+});
+
 // Add event listeners to the submit and delete buttons
 $("#signup-submit-btn").on("click", userFormSubmit);
 $("#confirm-add").on("click", createNewBusiness);
-// $("#refresh-btn").on("click", refreshBars);
-// $(".delete-business-btn").on("click", ".delete", deleteBusinessClick);
-// $(".delete-account-btn").on("click", ".delete", deleteUserClick);
