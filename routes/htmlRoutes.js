@@ -29,6 +29,7 @@ module.exports = function(app) {
 
   app.get("/members", isAuthenticated, function(req, res) {
     console.log(req.user);
+
     if (req.user.isBusiness) {
       db.Business.findOne({
         where: {
@@ -38,6 +39,7 @@ module.exports = function(app) {
         console.log(dbBusiness);
         return res.render("business_mngr", dbBusiness);
       });
+
       console.log("htmlRoutes user ID: " + req.user.id);
     } else {
       res.render("user", { username: req.user.username });
