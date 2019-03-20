@@ -176,6 +176,7 @@ body {
 #column-names {
    color: #c12213;
    text-shadow: none;
+   font-size: 1.5em;
 }
 #column-content {
    color: #f7c553;

@@ -45,9 +45,15 @@ app.set("view engine", "handlebars");
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 require("./routes/businessRoutes")(app);
+<<<<<<< HEAD
+// require("./routes/authRoutes")(app);
+require("./routes/userRoutes")(app);
+
+=======
 //require("./routes/authRoutes")(app);
 require("./routes/userRoutes")(app);
 app.use("/authRoutes", auth);
+>>>>>>> 21ca0809c3d1a67363dd0d84ac52c93fd60a9b79
 //load passport strategies
 //require("./passport")(passport, models.user);
 
