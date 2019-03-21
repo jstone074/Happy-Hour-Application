@@ -1,5 +1,3 @@
-// import { finished } from "stream";
-
 // The API object contains methods for each kind of request we'll make
 // They each have a 'route' argument to accomodate different routes with the same call
 
@@ -148,14 +146,8 @@ const createNewBusiness = event => {
   };
   console.log(businessInfo);
 
-  // API.postMethod(businessHours, "business");
-  // API.postMethod(businessSpecails, "business");
   API.postMethod(businessInfo, "business");
 
-  // $("#signup-username").val("");
-  // $("#signup-email").val("");
-  // $("#signup-phone").val("");
-  // $("#inputPassword3").val("");
   location.reload();
 };
 
@@ -238,3 +230,14 @@ $("#confirm-edit").on("click", event => {
 // Add event listeners to the submit and delete buttons
 $("#signup-submit-btn").on("click", userFormSubmit);
 $("#confirm-add").on("click", createNewBusiness);
+
+// ------------- Delete button -------------
+$("#confirm-delete").on("click", event, id => {
+  event.preventDefault();
+  $.ajax({
+    method: "DELETE",
+    url: "/api/delete/" + id
+  }).then(() => {
+    location.reload();
+  });
+});
