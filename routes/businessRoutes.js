@@ -4,7 +4,6 @@ var db = require("../models");
 module.exports = function(app) {
   // Add New info to business table
   app.post("/api/business", (req, res) => {
-    console.log("Business Routes Body " + req.body);
     db.Business.create({
       businessName: req.body.businessName,
       businessPhone: req.body.businessPhone,
@@ -64,7 +63,6 @@ module.exports = function(app) {
 
   // Add opening hours
   app.post("/api/hours", (req, res) => {
-    console.log("Hours Routes Body " + req.body);
     db.Hour.create({
       sunday: req.body.businessSundayHours,
       monday: req.body.businessMondayHours,
@@ -74,8 +72,6 @@ module.exports = function(app) {
       friday: req.body.businessFridayHours,
       saturday: req.body.businessSaturdayHours
     }).then(dbHours => {
-      console.log("this is my hours ID////////");
-      console.log(dbHours.id);
       res.json(dbHours);
     });
   });
@@ -95,7 +91,38 @@ module.exports = function(app) {
 
   // Add specials
   app.post("/api/specials", (req, res) => {
-    console.log("Hours Routes Body " + req.body);
+    db.Special.create({
+      sunday: req.body.businessSundayHours,
+      monday: req.body.businessMondayHours,
+      tuesday: req.body.businessTuesdayHours,
+      wednesday: req.body.businessWednesdayHours,
+      thursday: req.body.businessThrusdayHours,
+      friday: req.body.businessFridayHours,
+      saturday: req.body.businessSaturdayHours
+    }).then(dbSpecials => {
+      res.json(dbSpecials);
+    });
+  });
+
+  // Update specials
+  app.put("/api/editSpecials", (req, res) => {
+    db.Business.update({
+      sunday: req.body.businessSundayHours,
+      monday: req.body.businessMondayHours,
+      tuesday: req.body.businessTuesdayHours,
+      wednesday: req.body.businessWednesdayHours,
+      thursday: req.body.businessThrusdayHours,
+      friday: req.body.businessFridayHours,
+      saturday: req.body.businessSaturdayHours
+    }).then(dbHours => {
+      res.json(dbHours);
+    });
+  });
+
+  // ----- Specials -----
+
+  // Add specials
+  app.post("/api/specials", (req, res) => {
     db.Special.create({
       sunday: req.body.businessSundayHours,
       monday: req.body.businessMondayHours,

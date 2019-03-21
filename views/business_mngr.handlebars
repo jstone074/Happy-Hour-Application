@@ -405,3 +405,34 @@
   };
 
 </script> --}}
+
+{{!-- 
+<script type="text/javascript">
+
+  var businessExists = false;
+  var jumbotronHidden = true;
+  var addBusBtnHidden = false;
+  //on load hide business jumbotron
+  //$("#business-jumbotron").hide();
+
+  //hide add business button when clicked
+  $("#add-business-btn").on("click", function () {
+    $("#add-business-container").hide();
+    addBusBtnHidden = true;
+  });
+
+  $("#confirm-add").on("click", function () {
+    detectHiddenElements();
+  });
+
+  function detectHiddenElements() {
+    if (addBusBtnHidden === true) {
+      $("#business-jumbotron").show();
+      jumbotronHidden = false;
+    } else {
+      $("#add-business-container").show();
+      addBusBtnHidden = false;
+    };
+  };
+
+</script> --}}

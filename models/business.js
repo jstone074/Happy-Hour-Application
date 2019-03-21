@@ -188,6 +188,17 @@ module.exports = function(sequelize, DataTypes) {
     //     allowNull: true
     //   }
     // });
+    // Business.belongsTo(models.Hour, {
+    //   foreignKey: {
+    //     allowNull: true
+    //   }
+    // });
+
+    // Business.belongsTo(models.Special, {
+    //   foreignKey: {
+    //     allowNull: true
+    //   }
+    // });
   };
 
   return Business;

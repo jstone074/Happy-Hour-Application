@@ -28,19 +28,14 @@ module.exports = function(app) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
 
   app.get("/members", isAuthenticated, function(req, res) {
-    console.log(req.user);
-
     if (req.user.isBusiness) {
       db.Business.findOne({
         where: {
           UserId: req.user.id
         }
       }).then(dbBusiness => {
-        console.log(dbBusiness);
         return res.render("business_mngr", dbBusiness);
       });
-
-      console.log("htmlRoutes user ID: " + req.user.id);
     } else {
       res.render("user", { username: req.user.username });
     }
