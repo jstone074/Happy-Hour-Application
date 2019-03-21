@@ -48,15 +48,11 @@ const userFormSubmit = event => {
       .trim(), // This will need to swap to the hashed password
     isBusiness: $("input[name='gridRadios']:checked").val()
   };
-  console.log("This is the user info");
-  console.log(userInfo);
 
   API.postMethod(userInfo, "signup").then(() => {
     if (userInfo.isBusiness) {
-      console.log("On the way to business");
       window.location.href = "/members";
     } else {
-      console.log("On the way to user");
       window.location.href = "/user"; // ----- This should go to the user homepage
     }
   });
@@ -144,7 +140,6 @@ const createNewBusiness = event => {
       .val()
       .trim()
   };
-  console.log(businessInfo);
 
   API.postMethod(businessInfo, "business");
 
@@ -184,8 +179,6 @@ $("#submit-login-btn").on("click", event => {
   loginUser(loginInfo.email, loginInfo.password);
   // then we compare each in the html routes
   // and check the isBusiness from the get
-  console.log("toDashboard func triggered");
-  // setTimeout(hrefToBusiness, 1000);
   $("#login-email").val("");
   $("#login-password").val("");
 });
@@ -216,8 +209,6 @@ $("#confirm-edit").on("click", event => {
       .trim(),
     UserId: $("#b-name").data("id")
   };
-  console.log(",.,.,.,.,.,.,.<><><><><>, USER ID: " + editInfo.UserID);
-  console.log("<<>>>>>><><><><><><><EDIT INFO ON INDEX.JS <<<<<<<" + editInfo);
   $.ajax({
     method: "PUT",
     url: "/api/editSpecials",

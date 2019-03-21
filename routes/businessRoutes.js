@@ -4,7 +4,6 @@ var db = require("../models");
 module.exports = function(app) {
   // Add New info to business table
   app.post("/api/business", (req, res) => {
-    console.log("Business Routes Body " + req.body);
     db.Business.create({
       businessName: req.body.businessName,
       businessPhone: req.body.businessPhone,
@@ -51,7 +50,6 @@ module.exports = function(app) {
 
   // Add specials
   app.post("/api/specials", (req, res) => {
-    console.log("Hours Routes Body " + req.body);
     db.Special.create({
       sunday: req.body.businessSundayHours,
       monday: req.body.businessMondayHours,
