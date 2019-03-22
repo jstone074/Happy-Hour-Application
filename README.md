@@ -1,7 +1,7 @@
 # Happy Hour! :beers:
 Never miss a $2 beer again! Check out all your favorite bars and their specials in one convenient place!
 
-[heroku link here](same here)
+[https://app-happy-hour.herokuapp.com/](https://app-happy-hour.herokuapp.com/)
 
 ***
 
