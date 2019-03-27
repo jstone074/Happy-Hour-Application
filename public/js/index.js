@@ -32,7 +32,7 @@ const API = {
 // Save the new user to the db and refresh the list
 const userFormSubmit = event => {
   event.preventDefault();
-
+  
   const userInfo = {
     username: $("#signup-username")
       .val()
@@ -48,6 +48,16 @@ const userFormSubmit = event => {
       .trim(), // This will need to swap to the hashed password
     isBusiness: $("input[name='gridRadios']:checked").val()
   };
+
+  if (
+    userInfo.username === "" ||
+    userInfo.email === "" ||
+    userInfo.phone === "" ||
+    userInfo.password === ""
+  ) {
+    alert("Must enter sign up details.");
+    return;
+  }
 
   API.postMethod(userInfo, "signup").then(() => {
     if (userInfo.isBusiness) {
@@ -157,6 +167,7 @@ const loginUser = (email, password) => {
     })
     .catch(function(err) {
       alert("Incorrect Login Info. Please try again.");
+      alert("Incorrect Login Info. Please try again.");
       console.log(err);
     });
 };
@@ -174,6 +185,7 @@ $("#submit-login-btn").on("click", event => {
   };
 
   if (!loginInfo.email || !loginInfo.password) {
+    alert("Must enter valid login details. Please try again");
     return;
   }
 
