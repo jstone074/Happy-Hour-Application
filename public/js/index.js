@@ -143,7 +143,7 @@ const createNewBusiness = event => {
 
   API.postMethod(businessInfo, "business");
 
-  location.reload();
+  setTimeout(location.reload.bind(location), 500);
 };
 
 const loginUser = (email, password) => {
@@ -156,6 +156,7 @@ const loginUser = (email, password) => {
       // If there's an error, log the error
     })
     .catch(function(err) {
+      alert("Incorrect Login Info. Please try again.");
       console.log(err);
     });
 };
